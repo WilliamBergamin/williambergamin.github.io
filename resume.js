@@ -72,7 +72,7 @@ const resume = {
             "name": "McGill RoboHacks",
             "date": "2017",
             "points": [
-                "Won first place for \"Best Electrical Robot\"",
+                "Won 1st place for \"Best Electrical Robot\"",
                 "Built ShotBot robot, capable of detecting and filling up to 6 glasses with liquid, in 24hr time frame",
                 "Used Arduino and Java to control the robot from a smartphone"
             ]
