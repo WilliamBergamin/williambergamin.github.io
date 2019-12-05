@@ -14,4 +14,4 @@ This project was made for me, I am not expecting anyone to use it. But if you wa
 
 ## License
 
-[MIT](https://choosealicense.com/licenses/mit/)
+[MIT](https://github.com/WilliamBergamin/williambergamin.github.io/blob/master/LICENSE)
