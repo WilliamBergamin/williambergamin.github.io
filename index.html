@@ -9,6 +9,7 @@
         font-family: Georgia, serif;
         color: #FFFAF0;
     }
+
     h1 {
         margin-bottom: 15px;
     }
@@ -103,85 +104,100 @@
 
     <script src="./resume.js"></script>
     <script>
-        document.getElementById("name").innerHTML = resume.name;
-        document.getElementById("email").innerHTML = resume.email;
-        document.getElementById("phone").innerHTML = resume.phone;
+        new Promise(resolve => {
+            document.getElementById("name").innerHTML = resume.name;
+            document.getElementById("email").innerHTML = resume.email;
+            document.getElementById("phone").innerHTML = resume.phone;
 
-        // SUMMARY OF SKILLS AND QUALIFICATIONS
-        function getText(init, array) {
-            var text = init
-            for (var i = 0; i < array.length - 1; i++) {
-                text = text.concat(array[i] + " • ")
+            // SUMMARY OF SKILLS AND QUALIFICATIONS
+            function getText(init, array) {
+                var text = init
+                for (var i = 0; i < array.length - 1; i++) {
+                    text = text.concat(array[i] + " • ")
+                }
+                text = text.concat(array[array.length - 1])
+                return text
             }
-            text = text.concat(array[array.length - 1])
-            return text
-        }
-        document.getElementById("languages").innerHTML = getText("Languages: ", resume.languages);
-        document.getElementById("programming").innerHTML = getText("Programming: ", resume.programming);
-        document.getElementById("other").innerHTML = getText("Other: ", resume.other);
+            document.getElementById("languages").innerHTML = getText("Languages: ", resume.languages);
+            document.getElementById("programming").innerHTML = getText("Programming: ", resume.programming);
+            document.getElementById("other").innerHTML = getText("Other: ", resume.other);
+            resolve();
+        });
 
         // EDUCATION
-        var education = ""
-        function setEducation(element) {
-            education = education.concat("<h4>" + element.degree + "</h4>")
-            education = education.concat("<p>" + element.school + "</p>")
-            for (var i = 0; i < element.points.length; i++) {
-                education = education.concat("<pre>   •   " + element.points[i] + "</pre>")
+        new Promise(resolve => {
+            var education = ""
+            function setEducation(element) {
+                education = education.concat("<h4>" + element.degree + "</h4>")
+                education = education.concat("<p>" + element.school + "</p>")
+                for (var i = 0; i < element.points.length; i++) {
+                    education = education.concat("<pre>   •   " + element.points[i] + "</pre>")
+                }
             }
-        }
-        for (var i = 0; i < resume.education.length - 1; i++) {
-            setEducation(resume.education[i]);
-            education = education.concat("<br>")
-        }
-        setEducation(resume.education[resume.education.length - 1]);
-        document.getElementById("education").innerHTML = education;
+            for (var i = 0; i < resume.education.length - 1; i++) {
+                setEducation(resume.education[i]);
+                education = education.concat("<br>")
+            }
+            setEducation(resume.education[resume.education.length - 1]);
+            document.getElementById("education").innerHTML = education;
+            resolve();
+        });
 
         // WORK EXPERIENCE
-        var work = ""
-        function setWork(element) {
-            work = work.concat("<h4>" + element.position + "</h4>")
-            work = work.concat("<p>" + element.location + "</p>")
-            for (var i = 0; i < element.points.length; i++) {
-                work = work.concat("<pre>   •   " + element.points[i] + "</pre>")
+        new Promise(resolve => {
+            var work = ""
+            function setWork(element) {
+                work = work.concat("<h4>" + element.position + "</h4>")
+                work = work.concat("<p>" + element.location + "</p>")
+                for (var i = 0; i < element.points.length; i++) {
+                    work = work.concat("<pre>   •   " + element.points[i] + "</pre>")
+                }
             }
-        }
-        for (var i = 0; i < resume.work.length - 1; i++) {
-            setWork(resume.work[i]);
-            work = work.concat("<br>")
-        }
-        setWork(resume.work[resume.work.length - 1]);
-        document.getElementById("work").innerHTML = work;
+            for (var i = 0; i < resume.work.length - 1; i++) {
+                setWork(resume.work[i]);
+                work = work.concat("<br>")
+            }
+            setWork(resume.work[resume.work.length - 1]);
+            document.getElementById("work").innerHTML = work;
+            resolve();
+        });
 
         // PROJECTS
-        var project = ""
-        function setProject(element) {
-            project = project.concat("<h4>" + element.name + "</h4>")
-            for (var i = 0; i < element.points.length; i++) {
-                project = project.concat("<pre>   •   " + element.points[i] + "</pre>")
+        new Promise(resolve => {
+            var project = ""
+            function setProject(element) {
+                project = project.concat("<h4>" + element.name + "</h4>")
+                for (var i = 0; i < element.points.length; i++) {
+                    project = project.concat("<pre>   •   " + element.points[i] + "</pre>")
+                }
             }
-        }
-        for (var i = 0; i < resume.project.length - 1; i++) {
-            setProject(resume.project[i]);
-            project = project.concat("<br>")
-        }
-        setProject(resume.project[resume.project.length - 1]);
-        document.getElementById("project").innerHTML = project;
+            for (var i = 0; i < resume.project.length - 1; i++) {
+                setProject(resume.project[i]);
+                project = project.concat("<br>")
+            }
+            setProject(resume.project[resume.project.length - 1]);
+            document.getElementById("project").innerHTML = project;
+            resolve();
+        });
 
         // PROJECTS
-        var association = ""
-        function setAssociation(element) {
-            association = association.concat("<h4>" + element.position + "</h4>")
-            association = association.concat("<p>" + element.location + "</p>")
-            for (var i = 0; i < element.points.length; i++) {
-                association = association.concat("<pre>   •   " + element.points[i] + "</pre>")
+        new Promise(resolve => {
+            var association = ""
+            function setAssociation(element) {
+                association = association.concat("<h4>" + element.position + "</h4>")
+                association = association.concat("<p>" + element.location + "</p>")
+                for (var i = 0; i < element.points.length; i++) {
+                    association = association.concat("<pre>   •   " + element.points[i] + "</pre>")
+                }
             }
-        }
-        for (var i = 0; i < resume.association.length - 1; i++) {
-            setAssociation(resume.association[i]);
-            association = association.concat("<br>")
-        }
-        setAssociation(resume.association[resume.association.length - 1]);
-        document.getElementById("associations").innerHTML = association;
+            for (var i = 0; i < resume.association.length - 1; i++) {
+                setAssociation(resume.association[i]);
+                association = association.concat("<br>")
+            }
+            setAssociation(resume.association[resume.association.length - 1]);
+            document.getElementById("associations").innerHTML = association;
+            resolve();
+        });
     </script>
 </body>
 
