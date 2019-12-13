@@ -14,7 +14,7 @@ const resume = {
             "degree": "Bachelor of Engineering – Computer Engineering Co-op",
             "date": "2020 (Expected)",
             "school": "Concordia University, Montreal, QC",
-            "points": ["Member of the Institute for Co-operative Education", "Relevant courses: Data Structures & Algorithm, Operating Systems, Cloud Computing"]
+            "points": ["Member of the Institute for Co-operative Education", "Relevant courses: Data Structures & Algorithms, Operating Systems, Cloud Computing"]
         },
         {
             "degree": "DEC in Pure & Applied Science",
@@ -39,7 +39,7 @@ const resume = {
         {
             "position": "Software Developer",
             "date": "2017-2018",
-            "location": "TD Insurance, Villery-Saint-Michel-Parc Extention, Qc",
+            "location": "TD Insurance, Villeray-Saint-Michel-Parc Extension, Qc",
             "points": [
                 "Responsible for the development of JAVA APIs",
                 "Updated out-dated back-end services",
@@ -81,7 +81,7 @@ const resume = {
             "name": "ConUhack ll",
             "date": "2017",
             "points": [
-                "Used Arduino and C++ to create, a small videogame console power by a small microcontroller controlled through a prototyped gamepad and broadcasted onto a matrix of LED",
+                "Used Arduino and C++ to create a small videogame console powered by a small microcontroller controlled through a prototyped gamepad and broadcasted onto an LED matrix",
                 "Project “BreadBox” was created and presented in front of judges"
             ]
         },
@@ -90,33 +90,33 @@ const resume = {
     // PROFESSIONAL ASSOCIATIONS
     "association": [
         {
-            "position": "Vice President of External Affaires for the Engineering & Computer Science Association",
+            "position": "Vice President of External Affairs for the Engineering & Computer Science Association",
             "date": "2019 – Now",
             "location": "Concordia University Hall 838, Montréal, QC",
             "points": [
-                "Represent Concordia Engineering & Computer Science students on a National and Provincial level",
+                "Represent Concordia Engineering & Computer Science students at National and Provincial levels",
                 "Serving and representing almost 6000 students",
-                "Responsible of all external networking for the association"
+                "Responsible for all external networking for the association"
             ]
         },
         {
-            "position": "Vice President of Social Affaires for the Engineering & Computer Science Association",
+            "position": "Vice President of Social Affairs for the Engineering & Computer Science Association",
             "date": "2018 – 2019",
             "location": "Concordia University Hall 838, Montréal, QC",
             "points": [
-                "Organize and coordinate all social events for students in the faculty of engineering and computer science at Concordia University",
+                "Organization and coordination of all social events for students in the faculty of engineering and computer science at Concordia University",
                 "Serving and representing almost 6000 students",
                 "Managing the budget for all social events organised by the association",
                 "Negotiating all contracts pertaining to social events and activities"
             ]
         },
         {
-            "position": "Director of Social Affaires for the Engineering & Computer Science Association",
+            "position": "Director of Social Affairs for the Engineering & Computer Science Association",
             "date": "2017 – 2018",
             "location": "Concordia University Hall 838, Montréal, QC",
             "points": [
-                "Assist the Vice President of Social Affairs",
-                "Organize and coordinate social events in the goal of getting students involved at Concordia",
+                "Assisting the Vice President of Social Affairs",
+                "Organizing and coordinating social events with the goal of getting students involved at Concordia",
             ]
         },
         {
