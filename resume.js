@@ -7,7 +7,7 @@ const resume = {
     // SUMMARY OF SKILLS AND QUALIFICATIONS
     "languages": ["French│Spoken & Written", "English│Spoken & Written"],
     "programming": ["Python", "Java", "JavaScript", "C/C++", "Tensorflow", "Keras", "VHDL"],
-    "other": ["Kubernetes", "Docker", "Git"],
+    "other": ["Kubernetes", "Docker", "Git", "mongoDB", "REACT", "mac", "linux"],
     //EDUCATION
     "education": [
         {
@@ -27,8 +27,18 @@ const resume = {
     // WORK
     "work": [
         {
-            "position": "Machine Learning Intern",
+            "position": "Junior Developer",
             "date": "2019-Now",
+            "location": "Beast Group, Westmount, QC",
+            "points": [
+                "Responsible for the development, deployment and maintenance of tool produced in research and development.",
+                "Built Kubernetes infrastructure to dynamically deploy and use neural networks models in python.",
+                "Built an image labeling web application in JavaScript, graphQL and mongoDB"
+            ]
+        },
+        {
+            "position": "Machine Learning Intern",
+            "date": "2019",
             "location": "Beast Group, Westmount, QC",
             "points": [
                 "Responsible for the development of deep learning networks",
@@ -97,6 +107,16 @@ const resume = {
                 "Represent Concordia Engineering & Computer Science students at National and Provincial levels",
                 "Serving and representing almost 6000 students",
                 "Responsible for all external networking for the association"
+            ]
+        },
+        {
+            "position": "Director of Logistics for HackConcordia",
+            "date": "2019 – Now",
+            "location": "Concordia University Hall 838, Montréal, QC",
+            "points": [
+                "Responsible for the general logistical organisation of the ConUhacks 5 event",
+                "Organized and coordinated 100 volunteers during the ConUhacks 5 event",
+                "Responsible of organizing the orientation activities of the society"
             ]
         },
         {
