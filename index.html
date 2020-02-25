@@ -2,106 +2,72 @@
 <html>
 
 <head>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-    * {
-        font-family: Georgia, serif;
-        color: #FFFAF0;
-    }
 
-    h1 {
-        margin-bottom: 15px;
-    }
+<body style="background-color:#141414; margin:0;">
+    <ul class="toolbar">
+        <li class="toolbar"><a class="toolbar" href="#PROFESSIONAL ASSOCIATIONS">P-A</a></li>
+        <li class="toolbar"><a class="toolbar" href="#PROJECTS">Projects</a></li>
+        <li class="toolbar"><a class="toolbar" href="#WORK EXPERIENCE">Work</a></li>
+    </ul>
+    <div class="global">
+        <h1 id="name"></h1>
+        <p class="animated" id="email"></p>
+        <p class="animated" id="phone"></p>
+        <div class="div-for-logo">
+            <a class="animated" href="https://github.com/WilliamBergamin">
+                <img alt="Git" src="./static/white/github.png" width="25" height="auto">
+            </a>
+            <a class="animated" href="https://www.linkedin.com/in/william-r-bergamin-34536b135/">
+                <img alt="linkedin" src="./static/white/linkedin.png" width="25" height="auto">
+            </a>
+        </div>
 
-    h3 {
-        margin-top: 50px;
-        margin-bottom: 5px;
-    }
+        <h3>SUMMARY OF SKILLS & QUALIFICATIONS</h3>
+        <div class="main">
+            <div class="with-boarder-no-padding">
+                <p id="languages"></p>
+                <p id="programming"></p>
+                <p id="other"></p>
+            </div>
+        </div>
 
-    h4 {
-        margin-top: 5px;
-        margin-bottom: 5px;
-    }
+        <h3 id="EDUCATION">EDUCATION</h3>
+        <div class="main">
+            <div id="education" class="with-boarder"></div>
+        </div>
 
-    p {
-        margin-top: 5px;
-        margin-bottom: 5px;
-    }
+        <h3 id="WORK EXPERIENCE">WORK EXPERIENCE</h3>
+        <div class="main">
+            <div id="work" class="with-boarder"></div>
+        </div>
 
-    pre {
-        margin-top: 5px;
-        margin-bottom: 5px;
-    }
+        <h3 id="PROJECTS">PROJECTS</h3>
+        <div class="main">
+            <div id="project" class="with-boarder"></div>
+        </div>
 
-    a {
-        margin-left: 5px;
-        margin-right: 5px;
-    }
+        <h3 id="PROFESSIONAL ASSOCIATIONS">PROFESSIONAL ASSOCIATIONS</h3>
+        <div class="main">
+            <div id="associations" class="with-boarder"></div>
+        </div>
 
-    img {
-        margin-top: 5px;
-    }
-
-    .main {
-        width: 100%;
-        overflow: auto;
-    }
-</style>
-
-<body style="background-color:#141414;">
-    <h1 id="name" align="center"></h1>
-    <p id="email" align="center"></p>
-    <p id="phone" align="center"></p>
-    <div align="center">
-        <a href="https://github.com/WilliamBergamin">
-            <img alt="Git" src="./static/white/github.png" width="25" height="auto">
-        </a>
-        <a href="https://www.linkedin.com/in/william-r-bergamin-34536b135/">
-            <img alt="linkedin" src="./static/white/linkedin.png" width="25" height="auto">
-        </a>
+        <hr>
+        <div class="div-for-logo">
+            <a href="./static/William_R_Bergamin_CV19.pdf">
+                <img alt="resume" src="./static/white/resume.png" width="30" height="auto">
+            </a>
+            <a href="https://github.com/WilliamBergamin">
+                <img alt="git" src="./static/white/github.png" width="30" height="auto">
+            </a>
+            <a href="https://www.linkedin.com/in/william-r-bergamin-34536b135/">
+                <img alt="linkedin" src="./static/white/linkedin.png" width="30" height="auto">
+            </a>
+        </div>
+        <br>
     </div>
-
-    <h3 align="left">SUMMARY OF SKILLS & QUALIFICATIONS</h3>
-    <hr>
-    <div class="main">
-        <p id="languages" align="left"></p>
-        <p id="programming" align="left"></p>
-        <p id="other" align="left"></p>
-    </div>
-
-    <h3 align="left">EDUCATION</h3>
-    <hr>
-    <div id="education" class="main"></div>
-
-    <h3 align="left">WORK EXPERIENCE</h3>
-    <hr>
-    <div id="work" class="main"></div>
-
-    <h3 align="left">PROJECTS</h3>
-    <hr>
-    <div id="project" class="main"></div>
-
-    <h3 align="left">PROFESSIONAL ASSOCIATIONS</h3>
-    <hr>
-    <div id="associations" class="main"></div>
-
-    <br>
-    <hr>
-    <br>
-    <div align="center">
-        <a href="./static/William_R_Bergamin_CV19.pdf">
-            <img alt="resume" src="./static/white/resume.png" width="30" height="auto">
-        </a>
-        <a href="https://github.com/WilliamBergamin">
-            <img alt="git" src="./static/white/github.png" width="30" height="auto">
-        </a>
-        <a href="https://www.linkedin.com/in/william-r-bergamin-34536b135/">
-            <img alt="linkedin" src="./static/white/linkedin.png" width="30" height="auto">
-        </a>
-    </div>
-    <br>
-
     <script src="./resume.js"></script>
     <script>
         new Promise(resolve => {
@@ -130,9 +96,13 @@
             function setEducation(element) {
                 education = education.concat("<h4>" + element.degree + "</h4>")
                 education = education.concat("<p>" + element.school + "</p>")
+                education = education.concat("<div class=\"div-for-pre\">")
+                education = education.concat("<ul>")
                 for (var i = 0; i < element.points.length; i++) {
-                    education = education.concat("<pre>   •   " + element.points[i] + "</pre>")
+                    education = education.concat("<li>" + element.points[i] + "</li>")
                 }
+                education = education.concat("</ul>")
+                education = education.concat("</div>")
             }
             for (var i = 0; i < resume.education.length - 1; i++) {
                 setEducation(resume.education[i]);
@@ -149,9 +119,13 @@
             function setWork(element) {
                 work = work.concat("<h4>" + element.position + "</h4>")
                 work = work.concat("<p>" + element.location + "</p>")
+                work = work.concat("<div class=\"div-for-pre\">")
+                work = work.concat("<ul>")
                 for (var i = 0; i < element.points.length; i++) {
-                    work = work.concat("<pre>   •   " + element.points[i] + "</pre>")
+                    work = work.concat("<li>" + element.points[i] + "</li>")
                 }
+                work = work.concat("</ul>")
+                work = work.concat("</div>")
             }
             for (var i = 0; i < resume.work.length - 1; i++) {
                 setWork(resume.work[i]);
@@ -167,9 +141,13 @@
             var project = ""
             function setProject(element) {
                 project = project.concat("<h4>" + element.name + "</h4>")
+                project = project.concat("<div class=\"div-for-pre\">")
+                project = project.concat("<ul>")
                 for (var i = 0; i < element.points.length; i++) {
-                    project = project.concat("<pre>   •   " + element.points[i] + "</pre>")
+                    project = project.concat("<li>" + element.points[i] + "</li>")
                 }
+                project = project.concat("</ul>")
+                project = project.concat("</div>")
             }
             for (var i = 0; i < resume.project.length - 1; i++) {
                 setProject(resume.project[i]);
@@ -186,9 +164,13 @@
             function setAssociation(element) {
                 association = association.concat("<h4>" + element.position + "</h4>")
                 association = association.concat("<p>" + element.location + "</p>")
+                association = association.concat("<div class=\"div-for-pre\">")
+                association = association.concat("<ul>")
                 for (var i = 0; i < element.points.length; i++) {
-                    association = association.concat("<pre>   •   " + element.points[i] + "</pre>")
+                    association = association.concat("<li>" + element.points[i] + "</li>")
                 }
+                association = association.concat("</ul>")
+                association = association.concat("</div>")
             }
             for (var i = 0; i < resume.association.length - 1; i++) {
                 setAssociation(resume.association[i]);

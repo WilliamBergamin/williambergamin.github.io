@@ -1,0 +1,191 @@
+@keyframes text-focus-in {
+    0% {
+        filter: blur(12px);
+        opacity: 0;
+    }
+
+    100% {
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes scale-up-ver-top {
+    0% {
+        transform: scaleY(0.4);
+        transform-origin: 100% 0%;
+    }
+    100% {
+        transform: scaleY(1);
+        transform-origin: 100% 0%;
+    }
+}
+
+* {
+    font-family: Georgia, serif;
+    color: #fffaf0;
+}
+
+ul.toolbar {
+    z-index: 1;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #fffaf0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) 2s both;
+}
+
+li.toolbar {
+    float: right;
+    border: 2px solid #141414;
+    border-radius: 15px;
+    margin: 0.3rem;
+}
+
+li.toolbar a.toolbar {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 10px 12px;
+    text-decoration: none;
+    margin: 0;
+}
+
+li.toolbar a.toolbar:hover {
+    background-color: rgb(204, 199, 190);
+    border-radius: 15px;
+}
+
+:target:before {
+    content: "";
+    display: block;
+    height: 4rem;
+    margin: -4rem 0 0;
+}
+
+h1 {
+    margin-bottom: 15px;
+    text-align: center;
+    animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+}
+
+h3 {
+    margin-top: 1rem;
+    margin-bottom: 0rem;
+    text-align: center;
+    animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) 1s both;
+}
+
+h4 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+p.animated {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+    animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) 1s both;
+}
+
+p {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+pre {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+a {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+a.animated {
+    margin-left: 5px;
+    margin-right: 5px;
+    animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) 1s both;
+}
+
+img {
+    margin-top: 5px;
+}
+
+ul {
+    margin-top: 0em;
+}
+
+div.global {
+    margin-top: 4rem;
+    margin-left: 0.4rem;
+    margin-right: 0.4rem;
+}
+
+div.main {
+    width: 100%;
+    text-align: center;
+}
+
+div.div-for-logo {
+    text-align: center;
+}
+
+div.div-for-pre {
+    width: 100%;
+    text-align: left;
+    display: inline-block;
+    overflow: visible;
+    margin-bottom: 1em;
+}
+
+div.with-boarder-no-padding {
+    border: 2px solid #fffaf0;
+    border-radius: 12px;
+    width: 40%;
+    text-align: center;
+    display: inline-block;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) 1s both;
+}
+
+div.with-boarder {
+    border: 2px solid #fffaf0;
+    border-radius: 12px;
+    width: 40%;
+    text-align: center;
+    display: inline-block;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    padding-top: 1rem;
+    animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) 1s both;
+}
+
+@media only screen and (max-width: 600px) {
+    div.div-for-pre {
+        width: 100%;
+        overflow: auto;
+    }
+
+    div.with-boarder {
+        border-radius: 0px;
+        border-style: solid none none none;
+        width: 100%;
+        margin-bottom: 0rem;
+    }
+
+    div.with-boarder-no-padding {
+        border-radius: 0px;
+        border-style: solid none none none;
+        width: 100%;
+        margin-bottom: 0rem;
+    }
+}
