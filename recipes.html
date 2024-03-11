@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipes</title>
+    <link href='https://fonts.googleapis.com/css?family=Alegreya' rel='stylesheet'>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Alegreya', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #2f0909;
+        }
+
+        .sidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+
+        .sidenav a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidenav a:hover {
+            color: #f1f1f1;
+        }
+
+        .sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+        @media screen and (max-height: 450px) {
+            .sidenav {
+                padding-top: 15px;
+            }
+
+            .sidenav a {
+                font-size: 18px;
+            }
+        }
+
+        .fab {
+            position: fixed;
+            font-size: 2rem;
+            height: 3rem;
+            width: 3rem;
+            border-radius: 1.5rem;
+            text-align: center;
+            background-color: #000;
+            color: #FFF;
+            margin-left: 3rem;
+            margin-top: 1rem;
+            box-shadow: 2px 2px 3px #999;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+            h2 {
+                text-align: center;
+            }
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0
+        }
+
+        li {
+            margin-bottom: 10px;
+
+            span {
+                margin-left: 1em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <span class="fab" onclick="openNav()">&#9776;</span>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#">About</a>
+        <a href="#bone_marrow">Bone Marrow</a>
+        <a href="#ceviche">Ceviche</a>
+        <a href="#chili">Chili</a>
+        <a href="#egg_fried_rice">Egg Fried Rice</a>
+        <a href="#fish_tacos">Fish Tacos</a>
+        <a href="#">About</a>
+        <a href="#">About</a>
+    </div>
+
+    <section id="about">
+        <h2>Welcome</h2>
+        <p></p>
+
+        <h4>Purpose</h4>
+        <p>This project is intended for personal use but anyone is welcome to check it out and try some recipes. Welcome
+            in our world!</p>
+    </section>
+    <section id="bone_marrow">
+        <h2>Bone Marrow</h2>
+        <h3>Ingredients:</h3>
+        <p><b>1 pers.</b></p>
+        <ul>
+            <li><input type="checkbox"><span>2 large beef bones</span></li>
+            <li><input type="checkbox"><span>1 baguette</span></li>
+            <li><input type="checkbox"><span>Chives</span></li>
+            <li><input type="checkbox"><span>Fleur de sel</span></li>
+            <li><input type="checkbox"><span>Olive oil</span></li>
+            <li><input type="checkbox"><span>1 clove of garlic</span></li>
+        </ul>
+
+        <h3>Instructions:</h3>
+        <ol>
+            <li>Clean the large bones and place them in the sous vide at 155F for 1 hour;</li>
+            <li>Cut a 5-inch piece out of your baguette and slice in half length-wise;</li>
+            <li>Drizzle the two halves with olive oil and rub with the garlic clove;</li>
+            <li>Once the sous vide is done, grill the inside of the bread pieces in a hot pan;</li>
+            <li>Empty the bone marrow from the bones onto the bread and spread like butter;</li>
+            <li>Add the minced chives and fleur de sel.</li>
+        </ol>
+    </section>
+    <section id="ceviche">
+        <h2>Ceviche</h2>
+        <h3>Ingredients:</h3>
+        <p><b>2 pers.</b></p>
+        <ul>
+            <li><input type="checkbox"><span>450 g sea bass or tilapia</span></li>
+            <li><input type="checkbox"><span>1 1/3 cups of lime juce (about 9 or 10 limes)</span></li>
+            <li><input type="checkbox"><span>2 tbsp of olive oil</span></li>
+            <li><input type="checkbox"><span>Zest of 2 limes</span></li>
+            <li><input type="checkbox"><span>15 g of cilantro minced, keep 5 leaves for garnish</span></li>
+            <li><input type="checkbox"><span>1 tsp of salt</span></li>
+            <li><input type="checkbox"><span>1 1/2 thai chili peppers, minced</span></li>
+            <li><input type="checkbox"><span>2 cherry tomatoes diced</span></li>
+            <li><input type="checkbox"><span>1 french onion, minced</span></li>
+        </ul>
+
+        <h3>Instructions:</h3>
+        <ol>
+            <li>Start by juicing all the limes in a measuring cup, and set aside in a big bowl;</li>
+            <li>Cut the fish in small cubes (approximately 1 cm^2 cube) and mix in the big bowl with the lime juice;
+            </li>
+            <li>Mix all other ingredients in the bowl;</li>
+            <li>Set aside in the refrigerator for at least 1 hour or until the fish is cooked. Tip: the fish looks
+                cooked when white inside and out. It should look similar to when it is cooked over heat. If unsure, cut
+                open a cube and look inside to see if the whole piece is enough cooked.</li>
+            <li>Serve with fresh coriander and fresh baguette or crackers.</li>
+        </ol>
+    </section>
+    <section id="chili">
+        <h2>Chili</h2>
+        <h3>Ingredients:</h3>
+        <p><b>6 pers.</b></p>
+        <ul>
+            <li><input type="checkbox"><span>300 mg of plantbased protein (I usually buy the mexican seasoned)</span>
+            </li>
+            <li><input type="checkbox"><span>1 can of black beans, strained</span></li>
+            <li><input type="checkbox"><span>1 red onion</span></li>
+            <li><input type="checkbox"><span>1 red pepper</span></li>
+            <li><input type="checkbox"><span>3 cloves of garlic</span></li>
+            <li><input type="checkbox"><span>3 shallots</span></li>
+            <li><input type="checkbox"><span>3 jalapenos (or less depending on your taste)</span></li>
+            <li><input type="checkbox"><span>1 jar of medium spiced salsa (preferably Odel Paso)</span></li>
+            <li><input type="checkbox"><span>1 can of diced tomatoes</span></li>
+            <li><input type="checkbox"><span>500 ml of water</span></li>
+            <li><input type="checkbox"><span>1 sweet potato</span></li>
+            <li><input type="checkbox"><span>1 can of plain corn</span></li>
+            <li><input type="checkbox"><span>Any other veggies you got in the fridge</span></li>
+        </ul>
+
+        <h3>Instructions:</h3>
+        <ol>
+            <li>Take out the slow cooker and plug it in;</li>
+            <li>Open all the jars and cans and pour the mix into the slow cooker;</li>
+            <li>Mince all the veggies and throw in the slow cooker as well;</li>
+            <li>Add the plantbased meat;</li>
+            <li>Set the slow cooker to cook for approximately 6 hours;</li>
+            <li>Enjoy with fresh coriander and sour cream (!)</li>
+        </ol>
+    </section>
+    <section id="egg_fried_rice">
+        <h2>Egg Fried Rice</h2>
+        <h3>Ingredients:</h3>
+        <p><b>2 pers.</b></p>
+        <ul>
+            <li><input type="checkbox"><span>3 eggs</span></li>
+            <li><input type="checkbox"><span>1 cup of cooked minute rice (left overnight in the fridge is better)</span>
+            </li>
+            <li><input type="checkbox"><span>2 tsp Worcestershire sauce</span></li>
+            <li><input type="checkbox"><span>4 tbsp soy sauce</span></li>
+            <li><input type="checkbox"><span>2 tsp sesame oil</span></li>
+            <li><input type="checkbox"><span>5 drops of hot sauce</span></li>
+            <li><input type="checkbox"><span>2-3 tbsp crunchy peanut butter</span></li>
+            <li><input type="checkbox"><span>Sesame seeds</span></li>
+        </ul>
+
+        <h3>Instructions:</h3>
+        <ol>
+            <li>In a large pan, preferably a wok, add the sesame oil and turn on the stove to medium heat;</li>
+            <li>Add the eggs to the pan and scramble them with a wooden spatula;</li>
+            <li>When the eggs are slightly cooked, add the rice and mix together;</li>
+            <li>In the middle of the pan, create a space to add the soy sauce, Worcestershire sauce and hot sauce;</li>
+            <li>Mix all the ingredients in your pan and turn off the stove;</li>
+            <li>Add the peanut butter and sesame seeds;</li>
+            <li>Serve in bowl and add Tabasco sauce to taste.</li>
+        </ol>
+    </section>
+    <section id="fish_tacos">
+        <h2>Fish Tacos</h2>
+        <h3>Ingredients:</h3>
+        <p><b>2 pers.</b></p>
+        <ul>
+            <li><input type="checkbox"><span>350 g of tilapia, cod or any white-fleshed fish of your choice;</span></li>
+            <li><input type="checkbox"><span>500 ml of craft beer, either blonde or red;</span></li>
+            <li><input type="checkbox"><span>2 tbsp of salted butter</span></li>
+            <li><input type="checkbox"><span>2 french onions;</span></li>
+            <li><input type="checkbox"><span>15 cherry tomatoes;</span></li>
+            <li><input type="checkbox"><span>1 mango;</span></li>
+            <li><input type="checkbox"><span>100 mg of fresh cilantro</span></li>
+            <li><input type="checkbox"><span>2-3 tbsp of olive oil</span></li>
+            <li><input type="checkbox"><span>Salt and pepper, to taste</span></li>
+            <li><input type="checkbox"><span>6 or 7 small corn-flour tortillas</span></li>
+        </ul>
+
+        <h3>Instructions:</h3>
+        <ol>
+            <li>Mince the french onions, mango, cilantro (keep some for garnish), cherry tomatoes and place in a bowl.
+                Add some olive oil, salt and pepper and set aside.</li>
+            <li>In a medium heated pan, pour the beer and let it boil for 2-3 minutes, then add the salted butter. Lower
+                the heat and mix with a wooden spoon; then add the fish and cover the pan with a lid. Cook the fish in
+                the batter for 10-15 minutes (until soft);</li>
+            <li>Remove the fish and deglaze the pan;</li>
+            <li>Set aside the sauce you just made and on medium heat, sear the fish on both sides;</li>
+            <li>Meanwhile, wrap all the tortillas in foil and put in the oven for 10 minutes. When hot, remove from the
+                oven;</li>
+            <li>Time to make the tacos: in a tortilla, put some fish, add some sauce and homemade salsa. Then, garnish
+                with a few leaves of cilantro. If you want to make it *extra*, it is great with sour cream as well.</li>
+        </ol>
+    </section>
+
+</body>
+
+<script>
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+    }
+
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+    }
+</script>
+
+</html>
