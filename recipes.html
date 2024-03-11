@@ -30,12 +30,13 @@
             overflow-x: hidden;
             transition: 0.5s;
             padding-top: 60px;
+            overflow-y: scroll;
         }
 
         .sidenav a {
             padding: 8px 8px 8px 32px;
             text-decoration: none;
-            font-size: 25px;
+            font-size: 1rem;
             color: #818181;
             display: block;
             transition: 0.3s;
@@ -72,7 +73,7 @@
             text-align: center;
             background-color: #000;
             color: #FFF;
-            margin-left: 3rem;
+            margin-left: 1.5rem;
             margin-top: 1rem;
             box-shadow: 2px 2px 3px #999;
         }
@@ -112,7 +113,7 @@
 <body>
 
     <span class="fab" onclick="openNav()">&#9776;</span>
-    <div id="mySidenav" class="sidenav">
+    <div id="sideNav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a href="#">About</a>
         <a href="#bone_marrow">Bone Marrow</a>
@@ -120,10 +121,35 @@
         <a href="#chili">Chili</a>
         <a href="#egg_fried_rice">Egg Fried Rice</a>
         <a href="#fish_tacos">Fish Tacos</a>
-        <a href="#">About</a>
-        <a href="#">About</a>
+        <a href="#fresh_pasta">Fresh Pasta</a>
+        <a href="#goose_sous_vide">Goose Sous Vide</a>
+        <a href="#hot_sauce">Hot Sauce</a>
+        <a href="#pesto">Pesto</a>
+        <a href="#pho">Pho</a>
+        <a href="#poke_bowl">Poke Bowl</a>
+        <a href="#roasted_gnocchi">Roasted Gnocchi</a>
+        <a href="#tartare">Tartare</a>
     </div>
 
+    <!-- RECIPE TEMPLATE
+    <section id="bone_marrow">
+        <h2>NAME</h2>
+        <h3>Ingredients</h3>
+        <p><b>1 pers.</b></p>
+        <ul>
+            <li><input type="checkbox"><span>2 large beef bones</span></li>
+            <li><input type="checkbox"><span>1 baguette</span></li>
+            ....
+        </ul>
+
+        <h3>Instructions</h3>
+        <ol>
+            <li>Clean the large bones and place them in the sous vide at 155F for 1 hour;</li>
+            <li>Cut a 5-inch piece out of your baguette and slice in half length-wise;</li>
+            .....
+        </ol>
+    </section>
+-->
     <section id="about">
         <h2>Welcome</h2>
         <p></p>
@@ -134,7 +160,7 @@
     </section>
     <section id="bone_marrow">
         <h2>Bone Marrow</h2>
-        <h3>Ingredients:</h3>
+        <h3>Ingredients</h3>
         <p><b>1 pers.</b></p>
         <ul>
             <li><input type="checkbox"><span>2 large beef bones</span></li>
@@ -145,7 +171,7 @@
             <li><input type="checkbox"><span>1 clove of garlic</span></li>
         </ul>
 
-        <h3>Instructions:</h3>
+        <h3>Instructions</h3>
         <ol>
             <li>Clean the large bones and place them in the sous vide at 155F for 1 hour;</li>
             <li>Cut a 5-inch piece out of your baguette and slice in half length-wise;</li>
@@ -157,7 +183,7 @@
     </section>
     <section id="ceviche">
         <h2>Ceviche</h2>
-        <h3>Ingredients:</h3>
+        <h3>Ingredients</h3>
         <p><b>2 pers.</b></p>
         <ul>
             <li><input type="checkbox"><span>450 g sea bass or tilapia</span></li>
@@ -171,7 +197,7 @@
             <li><input type="checkbox"><span>1 french onion, minced</span></li>
         </ul>
 
-        <h3>Instructions:</h3>
+        <h3>Instructions</h3>
         <ol>
             <li>Start by juicing all the limes in a measuring cup, and set aside in a big bowl;</li>
             <li>Cut the fish in small cubes (approximately 1 cm^2 cube) and mix in the big bowl with the lime juice;
@@ -185,7 +211,7 @@
     </section>
     <section id="chili">
         <h2>Chili</h2>
-        <h3>Ingredients:</h3>
+        <h3>Ingredients</h3>
         <p><b>6 pers.</b></p>
         <ul>
             <li><input type="checkbox"><span>300 mg of plantbased protein (I usually buy the mexican seasoned)</span>
@@ -204,7 +230,7 @@
             <li><input type="checkbox"><span>Any other veggies you got in the fridge</span></li>
         </ul>
 
-        <h3>Instructions:</h3>
+        <h3>Instructions</h3>
         <ol>
             <li>Take out the slow cooker and plug it in;</li>
             <li>Open all the jars and cans and pour the mix into the slow cooker;</li>
@@ -216,7 +242,7 @@
     </section>
     <section id="egg_fried_rice">
         <h2>Egg Fried Rice</h2>
-        <h3>Ingredients:</h3>
+        <h3>Ingredients</h3>
         <p><b>2 pers.</b></p>
         <ul>
             <li><input type="checkbox"><span>3 eggs</span></li>
@@ -230,7 +256,7 @@
             <li><input type="checkbox"><span>Sesame seeds</span></li>
         </ul>
 
-        <h3>Instructions:</h3>
+        <h3>Instructions</h3>
         <ol>
             <li>In a large pan, preferably a wok, add the sesame oil and turn on the stove to medium heat;</li>
             <li>Add the eggs to the pan and scramble them with a wooden spatula;</li>
@@ -243,7 +269,7 @@
     </section>
     <section id="fish_tacos">
         <h2>Fish Tacos</h2>
-        <h3>Ingredients:</h3>
+        <h3>Ingredients</h3>
         <p><b>2 pers.</b></p>
         <ul>
             <li><input type="checkbox"><span>350 g of tilapia, cod or any white-fleshed fish of your choice;</span></li>
@@ -258,7 +284,7 @@
             <li><input type="checkbox"><span>6 or 7 small corn-flour tortillas</span></li>
         </ul>
 
-        <h3>Instructions:</h3>
+        <h3>Instructions</h3>
         <ol>
             <li>Mince the french onions, mango, cilantro (keep some for garnish), cherry tomatoes and place in a bowl.
                 Add some olive oil, salt and pepper and set aside.</li>
@@ -273,16 +299,286 @@
                 with a few leaves of cilantro. If you want to make it *extra*, it is great with sour cream as well.</li>
         </ol>
     </section>
+    <section id="fresh_pasta">
+        <h2>Fresh Pasta</h2>
+        <h3>Ingredients</h3>
+        <p><b>3 pers.</b></p>
+        <ul>
+            <li><input type="checkbox"><span>2 cups of white bleached flour</span></li>
+            <li><input type="checkbox"><span>3 egg yolks</span></li>
+            <li><input type="checkbox"><span>3 eggs</span></li>
+            <li><input type="checkbox"><span>2 tbsp of good olive oil</span></li>
+            <li><input type="checkbox"><span>2 pinches of salt</span></li>
+        </ul>
+
+        <h3>Instructions</h3>
+        <ol>
+            <li>On a clean surface, place the flour in the shape of a bowl;</li>
+            <li>Place the olive oil, eggs and egg yolks in this flour bowl;</li>
+            <li>With a fork, gradually mix the egg mixture with the flour until everything is combined;</li>
+            <li>With your hands, continue mixing everything until it creates a uniform dough;</li>
+            <li>Work this dough by folding it over multiple times (the more you work your dough, the more elasticity it
+                will have and the chewier your pasta will be);</li>
+            <li>Let the dough rest for a least an hour;</li>
+            <li>Cut the dough into smaller pieces and pass it through your pasta machine;</li>
+            <li>Form the type of pasta you want and enjoy.</li>
+        </ol>
+    </section>
+    <section id="goose_sous_vide">
+        <h2>Goose Sous Vide</h2>
+        <h3>Ingredients</h3>
+        <p><b>1 pers.</b></p>
+        <ul>
+            <li><input type="checkbox"><span>1 goose breast</span></li>
+            <li><input type="checkbox"><span>1 tbsp of smoked paprika</span></li>
+            <li><input type="checkbox"><span>1/2 tbsp of freshly ground pepper</span></li>
+            <li><input type="checkbox"><span>1 clove of garlic</span></li>
+            <li><input type="checkbox"><span>1 french onion</span></li>
+            <li><input type="checkbox"><span>A pinch of salt</span></li>
+            <li><input type="checkbox"><span>3/4 tbsp of duck fat</span></li>
+        </ul>
+
+        <h3>Instructions</h3>
+        <ol>
+            <li>Mince the french onion;</li>
+            <li>Roast the french onion in duck fat until caramelized;</li>
+            <li>Place all ingredients in a Zip-Loc bag and mix;</li>
+            <li>Submerge the Zip-Loc bag in a sous-vide tub;</li>
+            <li>Cook for 2 hours at 130 F;</li>
+            <li>Open the Zip-Loc bag and in a warm cast iron pan, sear the meat until grilled on either side;</li>
+            <li>Set aside the meat and empty the contents of the Zip-Loc bag in the pan;</li>
+            <li>Deglaze the pan with wine wine and cook until the mix thickens;</li>
+            <li>Serve the meat with the seasonings and preferably with white rice and/or greens.</li>
+        </ol>
+    </section>
+    <section id="hot_sauce">
+        <h2>Hot Sauce</h2>
+        <h3>Ingredients</h3>
+        <p><b>1 pers.</b></p>
+        <ul>
+            <li><input type="checkbox"><span>2 large beef bones</span></li>
+            <li><input type="checkbox"><span>1 baguette</span></li>
+            <li><input type="checkbox"><span>Chives</span></li>
+            <li><input type="checkbox"><span>Fleur de sel</span></li>
+            <li><input type="checkbox"><span>Olive oil</span></li>
+            <li><input type="checkbox"><span>1 clove of garlic</span></li>
+        </ul>
+
+        <h3>Instructions</h3>
+        <ol>
+            <li>Clean the large bones and place them in the sous vide at 155F for 1 hour;</li>
+            <li>Cut a 5-inch piece out of your baguette and slice in half length-wise;</li>
+            <li>Drizzle the two halves with olive oil and rub with the garlic clove;</li>
+            <li>Once the sous vide is done, grill the inside of the bread pieces in a hot pan;</li>
+            <li>Empty the bone marrow from the bones onto the bread and spread like butter;</li>
+            <li>Add the minced chives and fleur de sel.</li>
+        </ol>
+    </section>
+    <section id="pesto">
+        <h2>Pesto</h2>
+        <h3>Ingredients</h3>
+        <p><b></b></p>
+        <ul>
+            <li><input type="checkbox"><span>2 cups of basil leaves, or a whole plant</span></li>
+            <li><input type="checkbox"><span>2 garlic cloves</span></li>
+            <li><input type="checkbox"><span>Juice of 1 lime</span></li>
+            <li><input type="checkbox"><span>A handful of pine nuts</span></li>
+            <li><input type="checkbox"><span>1 tbsp of parmesan</span></li>
+            <li><input type="checkbox"><span>At least 5 tbsp of olive oil</span></li>
+        </ul>
+
+        <h3>Instructions</h3>
+        <ol>
+            <li>In a blender, mix all of the ingredients. Preferably use high-quality olive oil and fresh parmiggiano
+                reggiano for a better result. Mix until smooth; add a little bit of pasta water if needed;</li>
+            <li>Enjoy with pasta, on a grilled cheese, a sandwich, pizza or simply with fresh baguette. PS: It pairs
+                amazingly with our homemade gnocchi.</li>
+        </ol>
+    </section>
+    <section id="pho">
+        <h2>Pho Soup</h2>
+        <h3>Ingredients</h3>
+        <p><b>3 pers.</b></p>
+        <h4>Broth</h4>
+        <ul>
+            <li><input type="checkbox"><span>1 L of veggie broth</span></li>
+            <li><input type="checkbox"><span>2 sticks of lemongrass</span></li>
+            <li><input type="checkbox"><span>3 tbsp of ginger</span></li>
+            <li><input type="checkbox"><span>1 star anise</span></li>
+            <li><input type="checkbox"><span>...</span></li>
+        </ul>
+
+        <h4>Toppings</h4>
+        <ul>
+            <li><input type="checkbox"><span>200 mg of shiitake mushrooms</span></li>
+            <li><input type="checkbox"><span>200 mg of red nappa cabbage</span></li>
+            <li><input type="checkbox"><span>3 green onions</span></li>
+            <li><input type="checkbox"><span>3 eggs</span></li>
+            <li><input type="checkbox"><span>20 g of cilantro</span></li>
+            <li><input type="checkbox"><span>1 lime</span></li>
+            <li><input type="checkbox"><span>600 g of thin rice vermicelli</span></li>
+        </ul>
+
+        <h4>Tofu</h4>
+        <ul>
+            <li><input type="checkbox"><span>500 g of firm tofu</span></li>
+            <li><input type="checkbox"><span>1 tbsp of crunchy natural peanut butter</span></li>
+            <li><input type="checkbox"><span>1 tsp of sesame oil</span></li>
+            <li><input type="checkbox"><span>1 tsp of Tabasco sauce</span></li>
+            <li><input type="checkbox"><span>1 tsp of soy sauce</span></li>
+            <li><input type="checkbox"><span>1 tbsp of water</span></li>
+            <li><input type="checkbox"><span>1/2 tsp of cayenne pepper</span></li>
+            <li><input type="checkbox"><span>1/2 tsp of paprika</span></li>
+            <li><input type="checkbox"><span>1 tsp of Worcestershire sauce</span></li>
+            <li><input type="checkbox"><span>Salt, to taste</span></li>
+            <li><input type="checkbox"><span>Sesame seeds, roasted</span></li>
+        </ul>
+
+        <h3>Instructions</h3>
+        <ol>
+            <li>Start by preparing the broth. Grate the ginger using a zester and cut the lemongrass in small pieces.
+                Set everything in a cauldron and set to medium heat;</li>
+            <li>Secondly, we recommend to prepare the tofu and the marinade for it to be ready to be roasted later. Chop
+                the tofu in 1-cm cubes, mix all the liquids together and set aside. Keep the sesame seeds aside;</li>
+            <li>Chop the shiitake mushrooms and nappa cabbage and roast on medium heat in a pan with a drizzle of sesame
+                oil;</li>
+            <li>Set the veggies aside;</li>
+            <li>Prepare the tofu</li>
+            <ol>
+                <li>Put the stove on medium heat;</li>
+                <li>In a pan (preferably a wok), add a drizzle of sesame oil;</li>
+                <li>Add the tofu to the pan when hot;</li>
+                <li>Roast it until the edges are golden;</li>
+                <li>Turn off the stove and add the marinade;</li>
+                <li>Add the sesame seeds.</li>
+            </ol>
+            <li> To prepare the toppings, mince the green onions and soft-boil the eggs</li>
+            <ol>
+                <li>Boil a pot of water;</li>
+                <li>Add the eggs;</li>
+                <li>Cook for 7 minutes;</li>
+                <li>Drain and plunge the eggs in a cold-water bath for 1 minute;</li>
+                <li>Peel the eggs and cut in half.</li>
+            </ol>
+            <li>Boil some water and add the vermicelli when boiling, cook for 3 minutes or as indicated on the
+                packaging;</li>
+            <li>Add the vermicelli to an individual bowl with the broth, add the toppings;</li>
+            <li>Top with cilantro and a halved-lime.</li>
+        </ol>
+    </section>
+    <section id="poke_bowl">
+        <h2>Poke Bowl</h2>
+        <h3>Ingredients</h3>
+        <p><b>3 pers.</b></p>
+
+        <h4>For the fish</h4>
+        <ul>
+            <li><input type="checkbox"><span></span>450 g of sushi-grade tuna;</span></li>
+            <li><input type="checkbox"><span>1 tbsp of chili oil;</span></li>
+            <li><input type="checkbox"><span>3 tbsp of soy sauce;</span></li>
+            <li><input type="checkbox"><span>3 tbsp of sesame oil;</span></li>
+            <li><input type="checkbox"><span>2 tbsp of freshly grated ginger;</span></li>
+            <li><input type="checkbox"><span>A handful of sesame seeds</span></li>
+        </ul>
+        <h4>Toppings</h4>
+        <ul>
+            <li><input type="checkbox"><span>Half a cucumber, diced;</span></li>
+            <li><input type="checkbox"><span>Green onions, minced;</span></li>
+            <li><input type="checkbox"><span>A handful of coriander;</span></li>
+            <li><input type="checkbox"><span>Pickled onions;</span></li>
+            <li><input type="checkbox"><span>Pikliz, a marinated condiment of spicy red cabbage;</span></li>
+            <li><input type="checkbox"><span>1 avocado, diced;</span></li>
+            <li><input type="checkbox"><span>200 g of edamames</span></li>
+            <li><input type="checkbox"><span>1 1/2 cup of cooked white minute rice</span></li>
+        </ul>
+        <h4>Vinaigrette</h4>
+        <ul>
+            <li><input type="checkbox"><span>3 tbsp of mayo;</span></li>
+            <li><input type="checkbox"><span>tsbp of soy sauce;</span></li>
+            <li><input type="checkbox"><span>tsp of Worceistershire sauce;</span></li>
+            <li><input type="checkbox"><span>2 tbsp of sriracha</span></li>
+        </ul>
+
+        <h3>Instructions</h3>
+        <ol>
+            <li>Dice the tuna in one-inch cubes and mix in a bowl with all the ingredients written under "for the fish";
+            </li>
+            <li>Let it rest for at least 20 mins, especially if the tuna you are using is frozen;</li>
+            <li>Prepare the bowl; put some rice on the bottom, the toppings of your choice and the tuna;</li>
+            <li>Drizzle some vinaigrette on top of your poke and enjoy!</li>
+        </ol>
+    </section>
+    <section id="roasted_gnocchi">
+        <h2>Roasted Gnocchi</h2>
+        <h3>Ingredients</h3>
+        <p><b>2 pers.</b></p>
+        <ul>
+            <li><input type="checkbox"><span></span>2 cups of mashed potatoes - any kind of potato will do, but I prefer
+                yellow or white;</span></li>
+            <li><input type="checkbox"><span>4 cups of white-bleached flour;</span></li>
+            <li><input type="checkbox"><span>Salt and pepper, to taste;</span></li>
+            <li><input type="checkbox"><span>1 tbsp of olive oil</span></li>
+        </ul>
+
+        <h3>Instructions</h3>
+        <ol>
+            <li>First, peel the potatoes. Then, bring water to a boil and add some salt to it. Drop in the potatoes and
+                cook until soft;</li>
+            <li>Mash the potatoes and let them rest for a little bit for them to cool down;</li>
+            <li>Mix the mashed potatoes with the flour in a big bowl, then let it rest for an hour;</li>
+            <li>From the dough ball that you just made, separate some pieces and make them into long strings;</li>
+            <li>Then, cut the strings in small cubes and smoosh them with a fork for them to look like a gnocchi.</li>
+            <li>When all the dough is transformed into gnocchi, bring water to a boil again, add some salt and drop in
+                the gnocchi. Note: If you feel you have to much gnocchi for your meal, you can easily freeze them by
+                putting parchement paper between them.</li>
+            <li>Cook until all the gnocchi come to the surface; that will mean they are ready.</li>
+            <li>Lastly, in a pan, put some olive oil and roast the freshly cooked gnocchi. This way, they will be
+                crunchy on the outside and chewy on the inside. We recommend to enjoy with our homemade pesto.</li>
+        </ol>
+    </section>
+    <section id="tartare">
+        <h2>Tartare</h2>
+        <h3>Ingredients</h3>
+        <p><b>1 pers.</b></p>
+        <ul>
+            <li><input type="checkbox"><span>300 g of fresh sushi-grade salmon or tuna</span>
+            <li><input type="checkbox"><span>1 french onions</span></li>
+            <li><input type="checkbox"><span>1 limes</span></li>
+            <li><input type="checkbox"><span>1/2 tsp of wasabi powder</span></li>
+            <li><input type="checkbox"><span>1 clove of black garlic</span></li>
+            <li><input type="checkbox"><span>A pinch of fleur de sel</span></li>
+            <li><input type="checkbox"><span></span>1 tsp of Worcestershire</span></li>
+            <li><input type="checkbox"><span>2 tbsp of soy sauce</span></li>
+            <li><input type="checkbox"><span>1 tbsp of sesame oil</span></li>
+            <li><input type="checkbox"><span>Sesame seeds, preferably roasted</span></li>
+            <li><input type="checkbox"><span>1/2 hot pepper</span></li>
+            <li><input type="checkbox"><span>1/4 tsp of hot sauce</span></li>
+            <li><input type="checkbox"><span>1 tbsp of ginger</span></li>
+            <li><input type="checkbox"><span>1 tbsp cilantro</span></li>
+        </ul>
+
+        <h3>Instructions</h3>
+        <ol>
+            <li>In a big bowl, mix the liquids with sesame seeds, wasabi powder;</li>
+            <li>Mince the cilantro, french onions, black garlic, ginger and hot pepper, then add to the big bowl;</li>
+            <li>Zest the limes and then squeeze it, add to the big bowl;</li>
+            <li>Chef's special trick: buy some sushi-grade fish, but frozen. Cut the fish in small cubes while it is
+                thawing;</li>
+            <li>Mix the fish with the seasoning;</li>
+            <li>Add the fleur de sel to taste;</li>
+            <li>Serve with thinly sliced baguette toasted in the oven</li>
+        </ol>
+    </section>
 
 </body>
 
 <script>
     function openNav() {
-        document.getElementById("mySidenav").style.width = "250px";
+        document.getElementById("sideNav").style.width = "250px";
     }
 
     function closeNav() {
-        document.getElementById("mySidenav").style.width = "0";
+        document.getElementById("sideNav").style.width = "0";
     }
 </script>
 
