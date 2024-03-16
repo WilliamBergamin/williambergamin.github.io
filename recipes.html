@@ -91,6 +91,10 @@
             }
         }
 
+        h2 {
+            text-align: center
+        }
+
         p {
             line-height: 1.6;
         }
@@ -115,20 +119,20 @@
     <span class="fab" onclick="openNav()">&#9776;</span>
     <div id="sideNav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="#">About</a>
-        <a href="#bone_marrow">Bone Marrow</a>
-        <a href="#ceviche">Ceviche</a>
-        <a href="#chili">Chili</a>
-        <a href="#egg_fried_rice">Egg Fried Rice</a>
-        <a href="#fish_tacos">Fish Tacos</a>
-        <a href="#fresh_pasta">Fresh Pasta</a>
-        <a href="#goose_sous_vide">Goose Sous Vide</a>
-        <a href="#hot_sauce">Hot Sauce</a>
-        <a href="#pesto">Pesto</a>
-        <a href="#pho">Pho</a>
-        <a href="#poke_bowl">Poke Bowl</a>
-        <a href="#roasted_gnocchi">Roasted Gnocchi</a>
-        <a href="#tartare">Tartare</a>
+        <a href="#", onclick="closeNav()">About</a>
+        <a href="#bone_marrow", onclick="closeNav()">Bone Marrow</a>
+        <a href="#ceviche", onclick="closeNav()">Ceviche</a>
+        <a href="#chili", onclick="closeNav()">Chili</a>
+        <a href="#egg_fried_rice", onclick="closeNav()">Egg Fried Rice</a>
+        <a href="#fish_tacos", onclick="closeNav()">Fish Tacos</a>
+        <a href="#fresh_pasta", onclick="closeNav()">Fresh Pasta</a>
+        <a href="#goose_sous_vide", onclick="closeNav()">Goose Sous Vide</a>
+        <a href="#hot_sauce", onclick="closeNav()">Hot Sauce</a>
+        <a href="#pesto", onclick="closeNav()">Pesto</a>
+        <a href="#pho", onclick="closeNav()">Pho</a>
+        <a href="#poke_bowl", onclick="closeNav()">Poke Bowl</a>
+        <a href="#roasted_gnocchi", onclick="closeNav()">Roasted Gnocchi</a>
+        <a href="#tartare", onclick="closeNav()">Tartare</a>
     </div>
 
     <!-- RECIPE TEMPLATE
@@ -574,7 +578,7 @@
 
 <script>
     function openNav() {
-        document.getElementById("sideNav").style.width = "250px";
+        document.getElementById("sideNav").style.width = "15rem";
     }
 
     function closeNav() {
