@@ -989,6 +989,7 @@
 
         function openNav() {
             setNavOpen(true);
+            scrollActiveLinkIntoView();
             (nav.querySelector("a.active") || navLinks[0]).focus({ preventScroll: true });
         }
 
@@ -1008,7 +1009,7 @@
         document.querySelector(".backdrop").addEventListener("click", closeNav);
         nav.addEventListener("click", event => {
             if (event.target.closest("a")) {
-                closeNav();
+                setNavOpen(false);
             }
         });
         document.addEventListener("keydown", event => {
