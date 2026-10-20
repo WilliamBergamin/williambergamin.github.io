@@ -98,15 +98,15 @@
             position: fixed;
             inset: 0;
             z-index: 2;
-            background-color: rgba(0, 0, 0, 0.4);
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s ease;
+            background-color: transparent;
+            visibility: hidden;
+            transition: background-color 0.3s ease, visibility 0s 0.3s;
         }
 
         .sidenav.open + .backdrop {
-            opacity: 1;
-            pointer-events: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+            visibility: visible;
+            transition: background-color 0.3s ease;
         }
 
         .fab {
@@ -168,6 +168,7 @@
             .sidenav,
             .sidenav.open,
             .backdrop,
+            .sidenav.open + .backdrop,
             .fab {
                 transition: none;
             }
