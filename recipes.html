@@ -42,11 +42,18 @@
             transition: 0.3s;
         }
 
-        .sidenav a:hover {
+        .sidenav a:hover,
+        .sidenav .closebtn:hover {
             color: #f1f1f1;
         }
 
         .sidenav .closebtn {
+            background: none;
+            border: none;
+            color: #818181;
+            cursor: pointer;
+            padding: 8px 8px 8px 32px;
+            transition: 0.3s;
             position: absolute;
             top: 0;
             right: 25px;
@@ -72,6 +79,9 @@
             margin-left: 1.5rem;
             margin-top: 1rem;
             box-shadow: 2px 2px 3px #999;
+            border: none;
+            padding: 0;
+            cursor: pointer;
         }
 
         section {
@@ -100,7 +110,11 @@
             margin-bottom: 0.75rem;
         }
 
-        li span {
+        label {
+            cursor: pointer;
+        }
+
+        label span {
             margin-left: 1rem;
         }
     </style>
@@ -108,12 +122,12 @@
 
 <body>
 
-    <span class="fab" onclick="openNav()">&#9776;</span>
+    <button class="fab" aria-label="Open menu" onclick="openNav()">&#9776;</button>
     <div id="sideNav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <button class="closebtn" aria-label="Close menu" onclick="closeNav()">&times;</button>
         <a href="#about" onclick="closeNav()">About</a>
-        <a href="#bread" onclick="closeNav()">Bread</a>
         <a href="#bone_marrow" onclick="closeNav()">Bone Marrow</a>
+        <a href="#bread" onclick="closeNav()">Bread</a>
         <a href="#ceviche" onclick="closeNav()">Ceviche</a>
         <a href="#chili" onclick="closeNav()">Chili</a>
         <a href="#egg_fried_rice" onclick="closeNav()">Egg Fried Rice</a>
@@ -134,8 +148,8 @@
         <h3>Ingredients</h3>
         <p><b>1 pers.</b></p>
         <ul>
-            <li><input type="checkbox"><span>2 large beef bones</span></li>
-            <li><input type="checkbox"><span>1 baguette</span></li>
+            <li><label><input type="checkbox"><span>2 large beef bones</span></label></li>
+            <li><label><input type="checkbox"><span>1 baguette</span></label></li>
             ....
         </ul>
 
@@ -154,6 +168,29 @@
         <p>This project is intended for personal use but anyone is welcome to check it out and try some recipes. Welcome
             to our world!</p>
     </section>
+    <section id="bone_marrow">
+        <h2>Bone Marrow</h2>
+        <h3>Ingredients</h3>
+        <p><b>1 pers.</b></p>
+        <ul>
+            <li><label><input type="checkbox"><span>2 large beef bones</span></label></li>
+            <li><label><input type="checkbox"><span>1 baguette</span></label></li>
+            <li><label><input type="checkbox"><span>Chives</span></label></li>
+            <li><label><input type="checkbox"><span>Fleur de sel</span></label></li>
+            <li><label><input type="checkbox"><span>Olive oil</span></label></li>
+            <li><label><input type="checkbox"><span>1 clove of garlic</span></label></li>
+        </ul>
+
+        <h3>Instructions</h3>
+        <ol>
+            <li>Clean the large bones and place them in the sous vide at 155F for 1 hour;</li>
+            <li>Cut a 5-inch piece out of your baguette and slice in half length-wise;</li>
+            <li>Drizzle the two halves with olive oil and rub with the garlic clove;</li>
+            <li>Once the sous vide is done, grill the inside of the bread pieces in a hot pan;</li>
+            <li>Empty the bone marrow from the bones onto the bread and spread like butter;</li>
+            <li>Add the minced chives and fleur de sel.</li>
+        </ol>
+    </section>
     <section id="bread">
         <h2>Bread</h2>
         <h3>Ingredients</h3>
@@ -161,15 +198,15 @@
 
         <h4>Sourdough Starter</h4>
         <ul>
-            <li><input type="checkbox"><span>white flour</span></li>
-            <li><input type="checkbox"><span>water</span></li>
+            <li><label><input type="checkbox"><span>white flour</span></label></li>
+            <li><label><input type="checkbox"><span>water</span></label></li>
         </ul>
         <h4>Bread</h4>
         <ul>
-            <li><input type="checkbox"><span>50 g of sourdough starter</span></li>
-            <li><input type="checkbox"><span>450 ml of water</span></li>
-            <li><input type="checkbox"><span>600 g of white flour</span></li>
-            <li><input type="checkbox"><span>2 tsp of salt</span></li>
+            <li><label><input type="checkbox"><span>50 g of sourdough starter</span></label></li>
+            <li><label><input type="checkbox"><span>450 ml of water</span></label></li>
+            <li><label><input type="checkbox"><span>600 g of white flour</span></label></li>
+            <li><label><input type="checkbox"><span>2 tsp of salt</span></label></li>
         </ul>
 
         <h3>Instructions</h3>
@@ -204,43 +241,20 @@
             <li>Slice and enjoy.</li>
         </ol>
     </section>
-    <section id="bone_marrow">
-        <h2>Bone Marrow</h2>
-        <h3>Ingredients</h3>
-        <p><b>1 pers.</b></p>
-        <ul>
-            <li><input type="checkbox"><span>2 large beef bones</span></li>
-            <li><input type="checkbox"><span>1 baguette</span></li>
-            <li><input type="checkbox"><span>Chives</span></li>
-            <li><input type="checkbox"><span>Fleur de sel</span></li>
-            <li><input type="checkbox"><span>Olive oil</span></li>
-            <li><input type="checkbox"><span>1 clove of garlic</span></li>
-        </ul>
-
-        <h3>Instructions</h3>
-        <ol>
-            <li>Clean the large bones and place them in the sous vide at 155F for 1 hour;</li>
-            <li>Cut a 5-inch piece out of your baguette and slice in half length-wise;</li>
-            <li>Drizzle the two halves with olive oil and rub with the garlic clove;</li>
-            <li>Once the sous vide is done, grill the inside of the bread pieces in a hot pan;</li>
-            <li>Empty the bone marrow from the bones onto the bread and spread like butter;</li>
-            <li>Add the minced chives and fleur de sel.</li>
-        </ol>
-    </section>
     <section id="ceviche">
         <h2>Ceviche</h2>
         <h3>Ingredients</h3>
         <p><b>2 pers.</b></p>
         <ul>
-            <li><input type="checkbox"><span>450 g sea bass or tilapia</span></li>
-            <li><input type="checkbox"><span>1 1/3 cups of lime juice (about 9 or 10 limes)</span></li>
-            <li><input type="checkbox"><span>2 tbsp of olive oil</span></li>
-            <li><input type="checkbox"><span>Zest of 2 limes</span></li>
-            <li><input type="checkbox"><span>15 g of cilantro minced, keep 5 leaves for garnish</span></li>
-            <li><input type="checkbox"><span>1 tsp of salt</span></li>
-            <li><input type="checkbox"><span>1 1/2 thai chili peppers, minced</span></li>
-            <li><input type="checkbox"><span>2 cherry tomatoes diced</span></li>
-            <li><input type="checkbox"><span>1 french onion, minced</span></li>
+            <li><label><input type="checkbox"><span>450 g sea bass or tilapia</span></label></li>
+            <li><label><input type="checkbox"><span>1 1/3 cups of lime juice (about 9 or 10 limes)</span></label></li>
+            <li><label><input type="checkbox"><span>2 tbsp of olive oil</span></label></li>
+            <li><label><input type="checkbox"><span>Zest of 2 limes</span></label></li>
+            <li><label><input type="checkbox"><span>15 g of cilantro minced, keep 5 leaves for garnish</span></label></li>
+            <li><label><input type="checkbox"><span>1 tsp of salt</span></label></li>
+            <li><label><input type="checkbox"><span>1 1/2 thai chili peppers, minced</span></label></li>
+            <li><label><input type="checkbox"><span>2 cherry tomatoes diced</span></label></li>
+            <li><label><input type="checkbox"><span>1 french onion, minced</span></label></li>
         </ul>
 
         <h3>Instructions</h3>
@@ -260,20 +274,20 @@
         <h3>Ingredients</h3>
         <p><b>6 pers.</b></p>
         <ul>
-            <li><input type="checkbox"><span>300 g of plant-based protein (I usually buy the mexican seasoned)</span>
+            <li><label><input type="checkbox"><span>300 g of plant-based protein (I usually buy the mexican seasoned)</span></label>
             </li>
-            <li><input type="checkbox"><span>1 can of black beans, strained</span></li>
-            <li><input type="checkbox"><span>1 red onion</span></li>
-            <li><input type="checkbox"><span>1 red pepper</span></li>
-            <li><input type="checkbox"><span>3 cloves of garlic</span></li>
-            <li><input type="checkbox"><span>3 shallots</span></li>
-            <li><input type="checkbox"><span>3 jalapenos (or less depending on your taste)</span></li>
-            <li><input type="checkbox"><span>1 jar of medium spiced salsa (preferably Old El Paso)</span></li>
-            <li><input type="checkbox"><span>1 can of diced tomatoes</span></li>
-            <li><input type="checkbox"><span>500 ml of water</span></li>
-            <li><input type="checkbox"><span>1 sweet potato</span></li>
-            <li><input type="checkbox"><span>1 can of plain corn</span></li>
-            <li><input type="checkbox"><span>Any other veggies you got in the fridge</span></li>
+            <li><label><input type="checkbox"><span>1 can of black beans, strained</span></label></li>
+            <li><label><input type="checkbox"><span>1 red onion</span></label></li>
+            <li><label><input type="checkbox"><span>1 red pepper</span></label></li>
+            <li><label><input type="checkbox"><span>3 cloves of garlic</span></label></li>
+            <li><label><input type="checkbox"><span>3 shallots</span></label></li>
+            <li><label><input type="checkbox"><span>3 jalapenos (or less depending on your taste)</span></label></li>
+            <li><label><input type="checkbox"><span>1 jar of medium spiced salsa (preferably Old El Paso)</span></label></li>
+            <li><label><input type="checkbox"><span>1 can of diced tomatoes</span></label></li>
+            <li><label><input type="checkbox"><span>500 ml of water</span></label></li>
+            <li><label><input type="checkbox"><span>1 sweet potato</span></label></li>
+            <li><label><input type="checkbox"><span>1 can of plain corn</span></label></li>
+            <li><label><input type="checkbox"><span>Any other veggies you got in the fridge</span></label></li>
         </ul>
 
         <h3>Instructions</h3>
@@ -291,15 +305,15 @@
         <h3>Ingredients</h3>
         <p><b>2 pers.</b></p>
         <ul>
-            <li><input type="checkbox"><span>3 eggs</span></li>
-            <li><input type="checkbox"><span>1 cup of cooked minute rice (left overnight in the fridge is better)</span>
+            <li><label><input type="checkbox"><span>3 eggs</span></label></li>
+            <li><label><input type="checkbox"><span>1 cup of cooked minute rice (left overnight in the fridge is better)</span></label>
             </li>
-            <li><input type="checkbox"><span>2 tsp Worcestershire sauce</span></li>
-            <li><input type="checkbox"><span>4 tbsp soy sauce</span></li>
-            <li><input type="checkbox"><span>2 tsp sesame oil</span></li>
-            <li><input type="checkbox"><span>5 drops of hot sauce</span></li>
-            <li><input type="checkbox"><span>2-3 tbsp crunchy peanut butter</span></li>
-            <li><input type="checkbox"><span>Sesame seeds</span></li>
+            <li><label><input type="checkbox"><span>2 tsp Worcestershire sauce</span></label></li>
+            <li><label><input type="checkbox"><span>4 tbsp soy sauce</span></label></li>
+            <li><label><input type="checkbox"><span>2 tsp sesame oil</span></label></li>
+            <li><label><input type="checkbox"><span>5 drops of hot sauce</span></label></li>
+            <li><label><input type="checkbox"><span>2-3 tbsp crunchy peanut butter</span></label></li>
+            <li><label><input type="checkbox"><span>Sesame seeds</span></label></li>
         </ul>
 
         <h3>Instructions</h3>
@@ -318,16 +332,16 @@
         <h3>Ingredients</h3>
         <p><b>2 pers.</b></p>
         <ul>
-            <li><input type="checkbox"><span>350 g of tilapia, cod or any white-fleshed fish of your choice</span></li>
-            <li><input type="checkbox"><span>500 ml of craft beer, either blonde or red</span></li>
-            <li><input type="checkbox"><span>2 tbsp of salted butter</span></li>
-            <li><input type="checkbox"><span>2 french onions</span></li>
-            <li><input type="checkbox"><span>15 cherry tomatoes</span></li>
-            <li><input type="checkbox"><span>1 mango</span></li>
-            <li><input type="checkbox"><span>100 g of fresh cilantro</span></li>
-            <li><input type="checkbox"><span>2-3 tbsp of olive oil</span></li>
-            <li><input type="checkbox"><span>Salt and pepper, to taste</span></li>
-            <li><input type="checkbox"><span>6 or 7 small corn-flour tortillas</span></li>
+            <li><label><input type="checkbox"><span>350 g of tilapia, cod or any white-fleshed fish of your choice</span></label></li>
+            <li><label><input type="checkbox"><span>500 ml of craft beer, either blonde or red</span></label></li>
+            <li><label><input type="checkbox"><span>2 tbsp of salted butter</span></label></li>
+            <li><label><input type="checkbox"><span>2 french onions</span></label></li>
+            <li><label><input type="checkbox"><span>15 cherry tomatoes</span></label></li>
+            <li><label><input type="checkbox"><span>1 mango</span></label></li>
+            <li><label><input type="checkbox"><span>100 g of fresh cilantro</span></label></li>
+            <li><label><input type="checkbox"><span>2-3 tbsp of olive oil</span></label></li>
+            <li><label><input type="checkbox"><span>Salt and pepper, to taste</span></label></li>
+            <li><label><input type="checkbox"><span>6 or 7 small corn-flour tortillas</span></label></li>
         </ul>
 
         <h3>Instructions</h3>
@@ -350,11 +364,11 @@
         <h3>Ingredients</h3>
         <p><b>3 pers.</b></p>
         <ul>
-            <li><input type="checkbox"><span>2 cups of white bleached flour</span></li>
-            <li><input type="checkbox"><span>3 egg yolks</span></li>
-            <li><input type="checkbox"><span>3 eggs</span></li>
-            <li><input type="checkbox"><span>2 tbsp of good olive oil</span></li>
-            <li><input type="checkbox"><span>2 pinches of salt</span></li>
+            <li><label><input type="checkbox"><span>2 cups of white bleached flour</span></label></li>
+            <li><label><input type="checkbox"><span>3 egg yolks</span></label></li>
+            <li><label><input type="checkbox"><span>3 eggs</span></label></li>
+            <li><label><input type="checkbox"><span>2 tbsp of good olive oil</span></label></li>
+            <li><label><input type="checkbox"><span>2 pinches of salt</span></label></li>
         </ul>
 
         <h3>Instructions</h3>
@@ -375,14 +389,14 @@
         <h3>Ingredients</h3>
         <p><b>1 pers.</b></p>
         <ul>
-            <li><input type="checkbox"><span>1 goose breast</span></li>
-            <li><input type="checkbox"><span>1 tbsp of smoked paprika</span></li>
-            <li><input type="checkbox"><span>1/2 tbsp of freshly ground pepper</span></li>
-            <li><input type="checkbox"><span>1 clove of garlic</span></li>
-            <li><input type="checkbox"><span>1 french onion</span></li>
-            <li><input type="checkbox"><span>A pinch of salt</span></li>
-            <li><input type="checkbox"><span>3/4 tbsp of duck fat</span></li>
-            <li><input type="checkbox"><span>A splash of white wine</span></li>
+            <li><label><input type="checkbox"><span>1 goose breast</span></label></li>
+            <li><label><input type="checkbox"><span>1 tbsp of smoked paprika</span></label></li>
+            <li><label><input type="checkbox"><span>1/2 tbsp of freshly ground pepper</span></label></li>
+            <li><label><input type="checkbox"><span>1 clove of garlic</span></label></li>
+            <li><label><input type="checkbox"><span>1 french onion</span></label></li>
+            <li><label><input type="checkbox"><span>A pinch of salt</span></label></li>
+            <li><label><input type="checkbox"><span>3/4 tbsp of duck fat</span></label></li>
+            <li><label><input type="checkbox"><span>A splash of white wine</span></label></li>
         </ul>
 
         <h3>Instructions</h3>
@@ -405,20 +419,20 @@
         <p><b>About 750 ml</b></p>
         <h4>Fermented Peppers</h4>
         <ul>
-            <li><input type="checkbox"><span>540 g of red fresno peppers</span></li>
-            <li><input type="checkbox"><span>1.15 L of filtered water</span></li>
-            <li><input type="checkbox"><span>51 g of fine sea salt</span></li>
+            <li><label><input type="checkbox"><span>540 g of red fresno peppers</span></label></li>
+            <li><label><input type="checkbox"><span>1.15 L of filtered water</span></label></li>
+            <li><label><input type="checkbox"><span>51 g of fine sea salt</span></label></li>
         </ul>
 
         <h4>Hot Sauce</h4>
         <ul>
-            <li><input type="checkbox"><span>8 cloves of garlic</span></li>
-            <li><input type="checkbox"><span>120 ml of neutral oil (canola)</span></li>
-            <li><input type="checkbox"><span>456 g of fermented peppers, seeds optional</span></li>
-            <li><input type="checkbox"><span>150 ml of white distilled vinegar</span></li>
-            <li><input type="checkbox"><span>42 ml of brine from the fermented peppers</span></li>
-            <li><input type="checkbox"><span>1.5 g of xanthan gum (about 1/2 tsp, 0.2% of the sauce's weight)</span></li>
-            <li><input type="checkbox"><span>Kosher salt, to taste</span></li>
+            <li><label><input type="checkbox"><span>8 cloves of garlic</span></label></li>
+            <li><label><input type="checkbox"><span>120 ml of neutral oil (canola)</span></label></li>
+            <li><label><input type="checkbox"><span>456 g of fermented peppers, seeds optional</span></label></li>
+            <li><label><input type="checkbox"><span>150 ml of white distilled vinegar</span></label></li>
+            <li><label><input type="checkbox"><span>42 ml of brine from the fermented peppers</span></label></li>
+            <li><label><input type="checkbox"><span>1.5 g of xanthan gum (about 1/2 tsp, 0.2% of the sauce's weight)</span></label></li>
+            <li><label><input type="checkbox"><span>Kosher salt, to taste</span></label></li>
         </ul>
 
         <h3>Instructions</h3>
@@ -441,12 +455,12 @@
         <h3>Ingredients</h3>
         <p><b>About 1 cup</b></p>
         <ul>
-            <li><input type="checkbox"><span>2 cups of basil leaves, or a whole plant</span></li>
-            <li><input type="checkbox"><span>2 garlic cloves</span></li>
-            <li><input type="checkbox"><span>Juice of 1 lime</span></li>
-            <li><input type="checkbox"><span>A handful of pine nuts</span></li>
-            <li><input type="checkbox"><span>1 tbsp of parmesan</span></li>
-            <li><input type="checkbox"><span>At least 5 tbsp of olive oil</span></li>
+            <li><label><input type="checkbox"><span>2 cups of basil leaves, or a whole plant</span></label></li>
+            <li><label><input type="checkbox"><span>2 garlic cloves</span></label></li>
+            <li><label><input type="checkbox"><span>Juice of 1 lime</span></label></li>
+            <li><label><input type="checkbox"><span>A handful of pine nuts</span></label></li>
+            <li><label><input type="checkbox"><span>1 tbsp of parmesan</span></label></li>
+            <li><label><input type="checkbox"><span>At least 5 tbsp of olive oil</span></label></li>
         </ul>
 
         <h3>Instructions</h3>
@@ -463,37 +477,37 @@
         <p><b>3 pers.</b></p>
         <h4>Broth</h4>
         <ul>
-            <li><input type="checkbox"><span>1 L of veggie broth</span></li>
-            <li><input type="checkbox"><span>2 sticks of lemongrass</span></li>
-            <li><input type="checkbox"><span>3 tbsp of ginger</span></li>
-            <li><input type="checkbox"><span>1 star anise</span></li>
-            <li><input type="checkbox"><span>...</span></li>
+            <li><label><input type="checkbox"><span>1 L of veggie broth</span></label></li>
+            <li><label><input type="checkbox"><span>2 sticks of lemongrass</span></label></li>
+            <li><label><input type="checkbox"><span>3 tbsp of ginger</span></label></li>
+            <li><label><input type="checkbox"><span>1 star anise</span></label></li>
+            <li><label><input type="checkbox"><span>...</span></label></li>
         </ul>
 
         <h4>Toppings</h4>
         <ul>
-            <li><input type="checkbox"><span>200 g of shiitake mushrooms</span></li>
-            <li><input type="checkbox"><span>200 g of red napa cabbage</span></li>
-            <li><input type="checkbox"><span>3 green onions</span></li>
-            <li><input type="checkbox"><span>3 eggs</span></li>
-            <li><input type="checkbox"><span>20 g of cilantro</span></li>
-            <li><input type="checkbox"><span>1 lime</span></li>
-            <li><input type="checkbox"><span>600 g of thin rice vermicelli</span></li>
+            <li><label><input type="checkbox"><span>200 g of shiitake mushrooms</span></label></li>
+            <li><label><input type="checkbox"><span>200 g of red napa cabbage</span></label></li>
+            <li><label><input type="checkbox"><span>3 green onions</span></label></li>
+            <li><label><input type="checkbox"><span>3 eggs</span></label></li>
+            <li><label><input type="checkbox"><span>20 g of cilantro</span></label></li>
+            <li><label><input type="checkbox"><span>1 lime</span></label></li>
+            <li><label><input type="checkbox"><span>600 g of thin rice vermicelli</span></label></li>
         </ul>
 
         <h4>Tofu</h4>
         <ul>
-            <li><input type="checkbox"><span>500 g of firm tofu</span></li>
-            <li><input type="checkbox"><span>1 tbsp of crunchy natural peanut butter</span></li>
-            <li><input type="checkbox"><span>1 tsp of sesame oil</span></li>
-            <li><input type="checkbox"><span>1 tsp of Tabasco sauce</span></li>
-            <li><input type="checkbox"><span>1 tsp of soy sauce</span></li>
-            <li><input type="checkbox"><span>1 tbsp of water</span></li>
-            <li><input type="checkbox"><span>1/2 tsp of cayenne pepper</span></li>
-            <li><input type="checkbox"><span>1/2 tsp of paprika</span></li>
-            <li><input type="checkbox"><span>1 tsp of Worcestershire sauce</span></li>
-            <li><input type="checkbox"><span>Salt, to taste</span></li>
-            <li><input type="checkbox"><span>Sesame seeds, roasted</span></li>
+            <li><label><input type="checkbox"><span>500 g of firm tofu</span></label></li>
+            <li><label><input type="checkbox"><span>1 tbsp of crunchy natural peanut butter</span></label></li>
+            <li><label><input type="checkbox"><span>1 tsp of sesame oil</span></label></li>
+            <li><label><input type="checkbox"><span>1 tsp of Tabasco sauce</span></label></li>
+            <li><label><input type="checkbox"><span>1 tsp of soy sauce</span></label></li>
+            <li><label><input type="checkbox"><span>1 tbsp of water</span></label></li>
+            <li><label><input type="checkbox"><span>1/2 tsp of cayenne pepper</span></label></li>
+            <li><label><input type="checkbox"><span>1/2 tsp of paprika</span></label></li>
+            <li><label><input type="checkbox"><span>1 tsp of Worcestershire sauce</span></label></li>
+            <li><label><input type="checkbox"><span>Salt, to taste</span></label></li>
+            <li><label><input type="checkbox"><span>Sesame seeds, roasted</span></label></li>
         </ul>
 
         <h3>Instructions</h3>
@@ -537,30 +551,30 @@
 
         <h4>For the fish</h4>
         <ul>
-            <li><input type="checkbox"><span>450 g of sushi-grade tuna</span></li>
-            <li><input type="checkbox"><span>1 tbsp of chili oil</span></li>
-            <li><input type="checkbox"><span>3 tbsp of soy sauce</span></li>
-            <li><input type="checkbox"><span>3 tbsp of sesame oil</span></li>
-            <li><input type="checkbox"><span>2 tbsp of freshly grated ginger</span></li>
-            <li><input type="checkbox"><span>A handful of sesame seeds</span></li>
+            <li><label><input type="checkbox"><span>450 g of sushi-grade tuna</span></label></li>
+            <li><label><input type="checkbox"><span>1 tbsp of chili oil</span></label></li>
+            <li><label><input type="checkbox"><span>3 tbsp of soy sauce</span></label></li>
+            <li><label><input type="checkbox"><span>3 tbsp of sesame oil</span></label></li>
+            <li><label><input type="checkbox"><span>2 tbsp of freshly grated ginger</span></label></li>
+            <li><label><input type="checkbox"><span>A handful of sesame seeds</span></label></li>
         </ul>
         <h4>Toppings</h4>
         <ul>
-            <li><input type="checkbox"><span>Half a cucumber, diced</span></li>
-            <li><input type="checkbox"><span>Green onions, minced</span></li>
-            <li><input type="checkbox"><span>A handful of cilantro</span></li>
-            <li><input type="checkbox"><span>Pickled onions</span></li>
-            <li><input type="checkbox"><span>Pikliz, a marinated condiment of spicy red cabbage</span></li>
-            <li><input type="checkbox"><span>1 avocado, diced</span></li>
-            <li><input type="checkbox"><span>200 g of edamame</span></li>
-            <li><input type="checkbox"><span>1 1/2 cups of cooked white minute rice</span></li>
+            <li><label><input type="checkbox"><span>Half a cucumber, diced</span></label></li>
+            <li><label><input type="checkbox"><span>Green onions, minced</span></label></li>
+            <li><label><input type="checkbox"><span>A handful of cilantro</span></label></li>
+            <li><label><input type="checkbox"><span>Pickled onions</span></label></li>
+            <li><label><input type="checkbox"><span>Pikliz, a marinated condiment of spicy red cabbage</span></label></li>
+            <li><label><input type="checkbox"><span>1 avocado, diced</span></label></li>
+            <li><label><input type="checkbox"><span>200 g of edamame</span></label></li>
+            <li><label><input type="checkbox"><span>1 1/2 cups of cooked white minute rice</span></label></li>
         </ul>
         <h4>Vinaigrette</h4>
         <ul>
-            <li><input type="checkbox"><span>3 tbsp of mayo</span></li>
-            <li><input type="checkbox"><span>1 tbsp of soy sauce</span></li>
-            <li><input type="checkbox"><span>1 tsp of Worcestershire sauce</span></li>
-            <li><input type="checkbox"><span>2 tbsp of sriracha</span></li>
+            <li><label><input type="checkbox"><span>3 tbsp of mayo</span></label></li>
+            <li><label><input type="checkbox"><span>1 tbsp of soy sauce</span></label></li>
+            <li><label><input type="checkbox"><span>1 tsp of Worcestershire sauce</span></label></li>
+            <li><label><input type="checkbox"><span>2 tbsp of sriracha</span></label></li>
         </ul>
 
         <h3>Instructions</h3>
@@ -577,11 +591,11 @@
         <h3>Ingredients</h3>
         <p><b>2 pers.</b></p>
         <ul>
-            <li><input type="checkbox"><span>2 cups of mashed potatoes - any kind of potato will do, but I prefer
-                yellow or white</span></li>
-            <li><input type="checkbox"><span>4 cups of white-bleached flour</span></li>
-            <li><input type="checkbox"><span>Salt and pepper, to taste</span></li>
-            <li><input type="checkbox"><span>1 tbsp of olive oil</span></li>
+            <li><label><input type="checkbox"><span>2 cups of mashed potatoes - any kind of potato will do, but I prefer
+                yellow or white</span></label></li>
+            <li><label><input type="checkbox"><span>4 cups of white-bleached flour</span></label></li>
+            <li><label><input type="checkbox"><span>Salt and pepper, to taste</span></label></li>
+            <li><label><input type="checkbox"><span>1 tbsp of olive oil</span></label></li>
         </ul>
 
         <h3>Instructions</h3>
@@ -605,20 +619,20 @@
         <h3>Ingredients</h3>
         <p><b>1 pers.</b></p>
         <ul>
-            <li><input type="checkbox"><span>300 g of fresh sushi-grade salmon or tuna</span></li>
-            <li><input type="checkbox"><span>1 french onion</span></li>
-            <li><input type="checkbox"><span>1 lime</span></li>
-            <li><input type="checkbox"><span>1/2 tsp of wasabi powder</span></li>
-            <li><input type="checkbox"><span>1 clove of black garlic</span></li>
-            <li><input type="checkbox"><span>A pinch of fleur de sel</span></li>
-            <li><input type="checkbox"><span>1 tsp of Worcestershire</span></li>
-            <li><input type="checkbox"><span>2 tbsp of soy sauce</span></li>
-            <li><input type="checkbox"><span>1 tbsp of sesame oil</span></li>
-            <li><input type="checkbox"><span>Sesame seeds, preferably roasted</span></li>
-            <li><input type="checkbox"><span>1/2 hot pepper</span></li>
-            <li><input type="checkbox"><span>1/4 tsp of hot sauce</span></li>
-            <li><input type="checkbox"><span>1 tbsp of ginger</span></li>
-            <li><input type="checkbox"><span>1 tbsp cilantro</span></li>
+            <li><label><input type="checkbox"><span>300 g of fresh sushi-grade salmon or tuna</span></label></li>
+            <li><label><input type="checkbox"><span>1 french onion</span></label></li>
+            <li><label><input type="checkbox"><span>1 lime</span></label></li>
+            <li><label><input type="checkbox"><span>1/2 tsp of wasabi powder</span></label></li>
+            <li><label><input type="checkbox"><span>1 clove of black garlic</span></label></li>
+            <li><label><input type="checkbox"><span>A pinch of fleur de sel</span></label></li>
+            <li><label><input type="checkbox"><span>1 tsp of Worcestershire</span></label></li>
+            <li><label><input type="checkbox"><span>2 tbsp of soy sauce</span></label></li>
+            <li><label><input type="checkbox"><span>1 tbsp of sesame oil</span></label></li>
+            <li><label><input type="checkbox"><span>Sesame seeds, preferably roasted</span></label></li>
+            <li><label><input type="checkbox"><span>1/2 hot pepper</span></label></li>
+            <li><label><input type="checkbox"><span>1/4 tsp of hot sauce</span></label></li>
+            <li><label><input type="checkbox"><span>1 tbsp of ginger</span></label></li>
+            <li><label><input type="checkbox"><span>1 tbsp cilantro</span></label></li>
         </ul>
 
         <h3>Instructions</h3>
