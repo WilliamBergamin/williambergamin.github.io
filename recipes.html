@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Recipes</title>
     <link href='https://fonts.googleapis.com/css?family=Alegreya' rel='stylesheet'>
     <style>
@@ -11,44 +11,51 @@
             scroll-behavior: smooth;
         }
 
-        @media (prefers-reduced-motion: reduce) {
-            html {
-                scroll-behavior: auto;
-            }
-        }
-
         body {
             font-family: 'Alegreya', serif;
             margin: 0;
-            padding: 0;
+            padding: 0 0 5rem;
             background-color: #f8f8f8;
             color: #2f0909;
         }
 
+        body:has(.sidenav.open) {
+            overflow: hidden;
+        }
+
         .sidenav {
             box-sizing: border-box;
-            height: 100%;
-            width: 0;
+            height: 100dvh;
+            width: min(16rem, 80vw);
             position: fixed;
-            z-index: 1;
+            z-index: 3;
             top: 0;
             left: 0;
             background-color: #111;
             overflow-x: hidden;
-            transition: 0.5s;
-            padding-top: 60px;
             overflow-y: auto;
             overscroll-behavior: contain;
+            padding: env(safe-area-inset-top) 0 calc(1rem + env(safe-area-inset-bottom)) env(safe-area-inset-left);
+            transform: translateX(-100%);
+            visibility: hidden;
+            transition: transform 0.3s ease, visibility 0s 0.3s;
+        }
+
+        .sidenav.open {
+            transform: none;
+            visibility: visible;
+            transition: transform 0.3s ease;
         }
 
         .sidenav a {
-            padding: 8px 8px 8px 32px;
+            padding: 0.6rem 1rem 0.6rem 2rem;
+            border-left: 3px solid transparent;
             text-decoration: none;
             font-size: 1rem;
             color: #818181;
             display: block;
             white-space: nowrap;
-            transition: 0.3s;
+            transition: color 0.3s, border-color 0.3s;
         }
 
         .sidenav a.active,
@@ -57,41 +64,113 @@
             color: #f1f1f1;
         }
 
+        .sidenav a.active {
+            border-left-color: #f1f1f1;
+        }
+
         .sidenav .closebtn {
             background: none;
             border: none;
             color: #818181;
             cursor: pointer;
-            padding: 8px 8px 8px 32px;
-            transition: 0.3s;
-            position: absolute;
+            transition: color 0.3s;
+            position: sticky;
             top: 0;
-            right: 25px;
-            font-size: 36px;
-            margin-left: 50px;
+            display: block;
+            width: 100%;
+            height: 3.5rem;
+            margin-bottom: 0.5rem;
+            padding: 0 1.25rem;
+            background-color: #111;
+            text-align: right;
+            font-size: 2.25rem;
+            line-height: 1;
         }
 
-        @media screen and (max-height: 450px) {
-            .sidenav {
-                padding-top: 15px;
-            }
+        .sidenav a:focus-visible,
+        .sidenav .closebtn:focus-visible,
+        .fab:focus-visible {
+            outline: 2px solid #818181;
+            outline-offset: 2px;
+        }
+
+        .backdrop {
+            position: fixed;
+            inset: 0;
+            z-index: 2;
+            background-color: rgba(0, 0, 0, 0.4);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .sidenav.open + .backdrop {
+            opacity: 1;
+            pointer-events: auto;
         }
 
         .fab {
             position: fixed;
-            font-size: 2rem;
-            height: 3rem;
-            width: 3rem;
-            border-radius: 1.5rem;
-            text-align: center;
-            background-color: #000;
-            color: #FFF;
-            margin-left: 1.5rem;
-            margin-top: 1rem;
-            box-shadow: 2px 2px 3px #999;
+            z-index: 1;
+            right: calc(1.25rem + env(safe-area-inset-right));
+            bottom: calc(1.25rem + env(safe-area-inset-bottom));
+            display: grid;
+            place-items: center;
+            width: 3.5rem;
+            height: 3.5rem;
+            border-radius: 50%;
             border: none;
             padding: 0;
+            background-color: #000;
+            color: #fff;
+            box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.25);
             cursor: pointer;
+            transition: box-shadow 0.2s, transform 0.1s;
+        }
+
+        .fab:hover {
+            box-shadow: 0 0.4rem 1.1rem rgba(0, 0, 0, 0.35);
+        }
+
+        .fab:active {
+            transform: scale(0.95);
+        }
+
+        @media (min-width: 64rem) {
+            body {
+                padding: 0 1.25rem 0 16.25rem;
+            }
+
+            body:has(.sidenav.open) {
+                overflow: auto;
+            }
+
+            .sidenav {
+                width: 15rem;
+                padding-top: 1.25rem;
+                transform: none;
+                visibility: visible;
+                transition: none;
+            }
+
+            .fab,
+            .sidenav .closebtn,
+            .backdrop {
+                display: none;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            .sidenav,
+            .sidenav.open,
+            .backdrop,
+            .fab {
+                transition: none;
+            }
         }
 
         section {
@@ -157,31 +236,37 @@
 
 <body>
 
-    <button class="fab" aria-label="Open menu" onclick="openNav()">&#9776;</button>
-    <div id="sideNav" class="sidenav">
-        <button class="closebtn" aria-label="Close menu" onclick="closeNav()">&times;</button>
-        <a href="#about" onclick="closeNav()">About</a>
-        <a href="#bone_marrow" onclick="closeNav()">Bone Marrow</a>
-        <a href="#bread" onclick="closeNav()">Bread</a>
-        <a href="#ceviche" onclick="closeNav()">Ceviche</a>
-        <a href="#chili" onclick="closeNav()">Chili</a>
-        <a href="#crostoli" onclick="closeNav()">Crostoli</a>
-        <a href="#egg_fried_rice" onclick="closeNav()">Egg Fried Rice</a>
-        <a href="#fish_tacos" onclick="closeNav()">Fish Tacos</a>
-        <a href="#fresh_pasta" onclick="closeNav()">Fresh Pasta</a>
-        <a href="#goose_sous_vide" onclick="closeNav()">Goose Sous Vide</a>
-        <a href="#hot_sauce" onclick="closeNav()">Hot Sauce</a>
-        <a href="#mug_cookie" onclick="closeNav()">Mug Cookie</a>
-        <a href="#pesto" onclick="closeNav()">Pesto</a>
-        <a href="#pho" onclick="closeNav()">Pho</a>
-        <a href="#pickles" onclick="closeNav()">Pickles</a>
-        <a href="#poke_bowl" onclick="closeNav()">Poke Bowl</a>
-        <a href="#roasted_gnocchi" onclick="closeNav()">Roasted Gnocchi</a>
-        <a href="#sugar_pie" onclick="closeNav()">Sugar Pie</a>
-        <a href="#tartare" onclick="closeNav()">Tartare</a>
-        <a href="#tomato_sauce" onclick="closeNav()">Tomato Sauce</a>
-        <a href="#tomato_soup" onclick="closeNav()">Tomato Soup</a>
-    </div>
+    <button class="fab" aria-label="Open recipe list" aria-controls="sideNav" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25"
+            stroke-linecap="round" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16" />
+        </svg>
+    </button>
+    <nav id="sideNav" class="sidenav" aria-label="Recipes">
+        <button class="closebtn" aria-label="Close recipe list">&times;</button>
+        <a href="#about">About</a>
+        <a href="#bone_marrow">Bone Marrow</a>
+        <a href="#bread">Bread</a>
+        <a href="#ceviche">Ceviche</a>
+        <a href="#chili">Chili</a>
+        <a href="#crostoli">Crostoli</a>
+        <a href="#egg_fried_rice">Egg Fried Rice</a>
+        <a href="#fish_tacos">Fish Tacos</a>
+        <a href="#fresh_pasta">Fresh Pasta</a>
+        <a href="#goose_sous_vide">Goose Sous Vide</a>
+        <a href="#hot_sauce">Hot Sauce</a>
+        <a href="#mug_cookie">Mug Cookie</a>
+        <a href="#pesto">Pesto</a>
+        <a href="#pho">Pho</a>
+        <a href="#pickles">Pickles</a>
+        <a href="#poke_bowl">Poke Bowl</a>
+        <a href="#roasted_gnocchi">Roasted Gnocchi</a>
+        <a href="#sugar_pie">Sugar Pie</a>
+        <a href="#tartare">Tartare</a>
+        <a href="#tomato_sauce">Tomato Sauce</a>
+        <a href="#tomato_soup">Tomato Soup</a>
+    </nav>
+    <div class="backdrop"></div>
 
     <!-- RECIPE TEMPLATE
     <section id="recipe_id">
@@ -881,28 +966,56 @@
     </section>
 
     <script>
-        const navLinks = document.querySelectorAll("#sideNav a");
+        const nav = document.getElementById("sideNav");
+        const fab = document.querySelector(".fab");
+        const navLinks = nav.querySelectorAll("a");
 
         function markActive(id) {
             navLinks.forEach(link => link.classList.toggle("active", link.hash === "#" + id));
+            scrollActiveLinkIntoView();
         }
 
         function scrollActiveLinkIntoView() {
-            const nav = document.getElementById("sideNav");
             const active = nav.querySelector("a.active");
             if (active) {
                 nav.scrollTop = active.offsetTop - nav.clientHeight / 2;
             }
         }
 
+        function setNavOpen(open) {
+            nav.classList.toggle("open", open);
+            fab.setAttribute("aria-expanded", open);
+        }
+
         function openNav() {
-            document.getElementById("sideNav").style.width = "15rem";
-            scrollActiveLinkIntoView();
+            setNavOpen(true);
+            (nav.querySelector("a.active") || navLinks[0]).focus({ preventScroll: true });
         }
 
         function closeNav() {
-            document.getElementById("sideNav").style.width = "0";
+            if (!nav.classList.contains("open")) {
+                return;
+            }
+            const focusWasInNav = nav.contains(document.activeElement);
+            setNavOpen(false);
+            if (focusWasInNav) {
+                fab.focus();
+            }
         }
+
+        fab.addEventListener("click", openNav);
+        nav.querySelector(".closebtn").addEventListener("click", closeNav);
+        document.querySelector(".backdrop").addEventListener("click", closeNav);
+        nav.addEventListener("click", event => {
+            if (event.target.closest("a")) {
+                closeNav();
+            }
+        });
+        document.addEventListener("keydown", event => {
+            if (event.key === "Escape") {
+                closeNav();
+            }
+        });
 
         const sectionObserver = new IntersectionObserver(entries => {
             entries.filter(entry => entry.isIntersecting).forEach(entry => markActive(entry.target.id));
