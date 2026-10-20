@@ -11,6 +11,12 @@
             scroll-behavior: smooth;
         }
 
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+        }
+
         body {
             font-family: 'Alegreya', serif;
             margin: 0;
@@ -20,6 +26,7 @@
         }
 
         .sidenav {
+            box-sizing: border-box;
             height: 100%;
             width: 0;
             position: fixed;
@@ -31,6 +38,7 @@
             transition: 0.5s;
             padding-top: 60px;
             overflow-y: auto;
+            overscroll-behavior: contain;
         }
 
         .sidenav a {
@@ -39,9 +47,11 @@
             font-size: 1rem;
             color: #818181;
             display: block;
+            white-space: nowrap;
             transition: 0.3s;
         }
 
+        .sidenav a.active,
         .sidenav a:hover,
         .sidenav .closebtn:hover {
             color: #f1f1f1;
@@ -91,6 +101,7 @@
             background-color: #fff;
             border-radius: 0.3rem;
             box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.1);
+            scroll-margin-top: 5.5rem;
         }
 
         h2 {
@@ -870,13 +881,34 @@
     </section>
 
     <script>
+        const navLinks = document.querySelectorAll("#sideNav a");
+
+        function markActive(id) {
+            navLinks.forEach(link => link.classList.toggle("active", link.hash === "#" + id));
+        }
+
+        function scrollActiveLinkIntoView() {
+            const nav = document.getElementById("sideNav");
+            const active = nav.querySelector("a.active");
+            if (active) {
+                nav.scrollTop = active.offsetTop - nav.clientHeight / 2;
+            }
+        }
+
         function openNav() {
             document.getElementById("sideNav").style.width = "15rem";
+            scrollActiveLinkIntoView();
         }
 
         function closeNav() {
             document.getElementById("sideNav").style.width = "0";
         }
+
+        const sectionObserver = new IntersectionObserver(entries => {
+            entries.filter(entry => entry.isIntersecting).forEach(entry => markActive(entry.target.id));
+        }, { rootMargin: "-20% 0px -79% 0px" });
+
+        document.querySelectorAll("section[id]").forEach(section => sectionObserver.observe(section));
     </script>
 </body>
 
