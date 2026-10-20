@@ -12,7 +12,7 @@
         }
 
         body {
-            font-family: 'Alegreya', sans-serif;
+            font-family: 'Alegreya', serif;
             margin: 0;
             padding: 0;
             background-color: #f8f8f8;
@@ -30,7 +30,7 @@
             overflow-x: hidden;
             transition: 0.5s;
             padding-top: 60px;
-            overflow-y: scroll;
+            overflow-y: auto;
         }
 
         .sidenav a {
@@ -58,10 +58,6 @@
             .sidenav {
                 padding-top: 15px;
             }
-
-            .sidenav a {
-                font-size: 18px;
-            }
         }
 
         .fab {
@@ -85,14 +81,10 @@
             background-color: #fff;
             border-radius: 0.3rem;
             box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.1);
-
-            h2 {
-                text-align: center;
-            }
         }
 
         h2 {
-            text-align: center
+            text-align: center;
         }
 
         p {
@@ -108,7 +100,7 @@
             margin-bottom: 0.75rem;
         }
 
-        span {
+        li span {
             margin-left: 1rem;
         }
     </style>
@@ -119,21 +111,21 @@
     <span class="fab" onclick="openNav()">&#9776;</span>
     <div id="sideNav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="#", onclick="closeNav()">About</a>
-        <a href="#bread", onclick="closeNav()">Bread</a>
-        <a href="#bone_marrow", onclick="closeNav()">Bone Marrow</a>
-        <a href="#ceviche", onclick="closeNav()">Ceviche</a>
-        <a href="#chili", onclick="closeNav()">Chili</a>
-        <a href="#egg_fried_rice", onclick="closeNav()">Egg Fried Rice</a>
-        <a href="#fish_tacos", onclick="closeNav()">Fish Tacos</a>
-        <a href="#fresh_pasta", onclick="closeNav()">Fresh Pasta</a>
-        <a href="#goose_sous_vide", onclick="closeNav()">Goose Sous Vide</a>
-        <a href="#hot_sauce", onclick="closeNav()">Hot Sauce</a>
-        <a href="#pesto", onclick="closeNav()">Pesto</a>
-        <a href="#pho", onclick="closeNav()">Pho</a>
-        <a href="#poke_bowl", onclick="closeNav()">Poke Bowl</a>
-        <a href="#roasted_gnocchi", onclick="closeNav()">Roasted Gnocchi</a>
-        <a href="#tartare", onclick="closeNav()">Tartare</a>
+        <a href="#about" onclick="closeNav()">About</a>
+        <a href="#bread" onclick="closeNav()">Bread</a>
+        <a href="#bone_marrow" onclick="closeNav()">Bone Marrow</a>
+        <a href="#ceviche" onclick="closeNav()">Ceviche</a>
+        <a href="#chili" onclick="closeNav()">Chili</a>
+        <a href="#egg_fried_rice" onclick="closeNav()">Egg Fried Rice</a>
+        <a href="#fish_tacos" onclick="closeNav()">Fish Tacos</a>
+        <a href="#fresh_pasta" onclick="closeNav()">Fresh Pasta</a>
+        <a href="#goose_sous_vide" onclick="closeNav()">Goose Sous Vide</a>
+        <a href="#hot_sauce" onclick="closeNav()">Hot Sauce</a>
+        <a href="#pesto" onclick="closeNav()">Pesto</a>
+        <a href="#pho" onclick="closeNav()">Pho</a>
+        <a href="#poke_bowl" onclick="closeNav()">Poke Bowl</a>
+        <a href="#roasted_gnocchi" onclick="closeNav()">Roasted Gnocchi</a>
+        <a href="#tartare" onclick="closeNav()">Tartare</a>
     </div>
 
     <!-- RECIPE TEMPLATE
@@ -157,7 +149,6 @@
 -->
     <section id="about">
         <h2>Welcome</h2>
-        <p></p>
 
         <h4>Purpose</h4>
         <p>This project is intended for personal use but anyone is welcome to check it out and try some recipes. Welcome
@@ -514,23 +505,25 @@
             <li>Chop the shiitake mushrooms and napa cabbage and roast on medium heat in a pan with a drizzle of sesame
                 oil;</li>
             <li>Set the veggies aside;</li>
-            <li>Prepare the tofu</li>
-            <ol>
-                <li>Put the stove on medium heat;</li>
-                <li>In a pan (preferably a wok), add a drizzle of sesame oil;</li>
-                <li>Add the tofu to the pan when hot;</li>
-                <li>Roast it until the edges are golden;</li>
-                <li>Turn off the stove and add the marinade;</li>
-                <li>Add the sesame seeds.</li>
-            </ol>
-            <li> To prepare the toppings, mince the green onions and soft-boil the eggs</li>
-            <ol>
-                <li>Boil a pot of water;</li>
-                <li>Add the eggs;</li>
-                <li>Cook for 7 minutes;</li>
-                <li>Drain and plunge the eggs in a cold-water bath for 1 minute;</li>
-                <li>Peel the eggs and cut in half.</li>
-            </ol>
+            <li>Prepare the tofu:
+                <ol>
+                    <li>Put the stove on medium heat;</li>
+                    <li>In a pan (preferably a wok), add a drizzle of sesame oil;</li>
+                    <li>Add the tofu to the pan when hot;</li>
+                    <li>Roast it until the edges are golden;</li>
+                    <li>Turn off the stove and add the marinade;</li>
+                    <li>Add the sesame seeds.</li>
+                </ol>
+            </li>
+            <li>To prepare the toppings, mince the green onions and soft-boil the eggs:
+                <ol>
+                    <li>Boil a pot of water;</li>
+                    <li>Add the eggs;</li>
+                    <li>Cook for 7 minutes;</li>
+                    <li>Drain and plunge the eggs in a cold-water bath for 1 minute;</li>
+                    <li>Peel the eggs and cut in half.</li>
+                </ol>
+            </li>
             <li>Boil some water and add the vermicelli when boiling, cook for 3 minutes or as indicated on the
                 packaging;</li>
             <li>Add the vermicelli to an individual bowl with the broth, add the toppings;</li>
@@ -612,7 +605,7 @@
         <h3>Ingredients</h3>
         <p><b>1 pers.</b></p>
         <ul>
-            <li><input type="checkbox"><span>300 g of fresh sushi-grade salmon or tuna</span>
+            <li><input type="checkbox"><span>300 g of fresh sushi-grade salmon or tuna</span></li>
             <li><input type="checkbox"><span>1 french onion</span></li>
             <li><input type="checkbox"><span>1 lime</span></li>
             <li><input type="checkbox"><span>1/2 tsp of wasabi powder</span></li>
@@ -641,16 +634,15 @@
         </ol>
     </section>
 
+    <script>
+        function openNav() {
+            document.getElementById("sideNav").style.width = "15rem";
+        }
+
+        function closeNav() {
+            document.getElementById("sideNav").style.width = "0";
+        }
+    </script>
 </body>
-
-<script>
-    function openNav() {
-        document.getElementById("sideNav").style.width = "15rem";
-    }
-
-    function closeNav() {
-        document.getElementById("sideNav").style.width = "0";
-    }
-</script>
 
 </html>
